@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d334b5e3e77c42f44a18097538a6e41b, type: 3}
+  m_Name: Dough
+  m_EditorClassIdentifier: 
+  componentName: Dough
+  ComponentPrefab: {fileID: 5884328148387669146, guid: 93ab0017be5c51e489b7cc93dcdb8616, type: 3}
+  type: Dough
+  outputName: Empty_Bungeobbang
+  outputPrefab: {fileID: 3232558768945177706, guid: d0ba436077cb58a4fa2d767ce7fedb3a, type: 3}

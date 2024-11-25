@@ -1,16 +1,9 @@
+using System.Collections;
 using UnityEngine;
-
-public class CookingTools : MonoBehaviour
+interface ICookingTools
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void CheckComponent(GameObject ingredient);
+    IEnumerator ProcessCooking();
+    void ChangeColor();
+    void CreateOutput();
 }

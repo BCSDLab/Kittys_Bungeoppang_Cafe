@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tool_Mixer
   - Tool_Oven
+  - Tool_Cutting_Board
   - Ingredient
   - Dough
   layers:
@@ -44,6 +45,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Cooking Tools
+    uniqueID: 158728715
+    locked: 0
+  - name: Ingredients
+    uniqueID: 2984740281
     locked: 0
   m_RenderingLayers:
   - Default

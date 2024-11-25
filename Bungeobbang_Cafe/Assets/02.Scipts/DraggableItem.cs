@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DraggableItem : MonoBehaviour
 {
+    public Components ingredientData; // ScriptableObject ¿¬°á
     public bool isDrag = false;
 
     void Update()
@@ -13,3 +14,5 @@ public class DraggableItem : MonoBehaviour
         }
     }
 }
+
+
