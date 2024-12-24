@@ -8,4 +8,5 @@ public class ComponentsSO : ScriptableObject
     public string type;
     public string outputName;
     public GameObject outputPrefab;
+    public GameObject Bungeobbang;
 }

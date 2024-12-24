@@ -15,7 +15,13 @@ public class DragAndDropItem : MonoBehaviour
 
     void Update()
     {
-        // 아이템 집기
+        PickUpItem();
+        PutDownItem();
+    }
+
+    // 아이템 집기
+    void PickUpItem()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -24,7 +30,7 @@ public class DragAndDropItem : MonoBehaviour
             if (hit.collider != null)
             {
                 draggableItem = hit.collider.GetComponent<DraggableItem>();
-                
+
                 if (draggableItem != null)
                 {
                     Debug.Log("아이템 집기");
@@ -33,8 +39,11 @@ public class DragAndDropItem : MonoBehaviour
                 }
             }
         }
+    }
 
-        // 아이템 놓기
+    // 아이템 놓기
+    void PutDownItem()
+    {
         if (Input.GetMouseButtonUp(0))
         {
             if (draggableItem != null)
@@ -44,15 +53,33 @@ public class DragAndDropItem : MonoBehaviour
                 {
                     mixerController.CheckComponent(draggableItem.gameObject);
                 }
+
                 // 반죽을 오븐에 전달
                 else if (ovenController != null && draggableItem.CompareTag("Dough") && IsOverlapping(draggableItem.gameObject, ovenController.gameObject))
                 {
                     ovenController.CheckComponent(draggableItem.gameObject);
                 }
 
-                draggableItem.transform.position = startPosition;
-                draggableItem.isDrag = false;
-                draggableItem = null;
+                // 붕어빵에 필링 넣기
+                else if (draggableItem.gameObject.CompareTag("Empty_Bungeobbang"))
+                {
+                    CombineComponents combineComponents = GetComponent<CombineComponents>();
+                    if (combineComponents != null)
+                    {
+                        combineComponents.CheckFilling(draggableItem.gameObject);
+                    }
+                    else
+                    {
+                        Debug.Log("nope");
+                    }
+                }
+
+                if (draggableItem != null)
+                {
+                    draggableItem.transform.position = startPosition;
+                    draggableItem.isDrag = false;
+                    draggableItem = null;
+                }
             }
         }
     }

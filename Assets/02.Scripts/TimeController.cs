@@ -8,7 +8,7 @@ public class TimeController : MonoBehaviour
 {
     [SerializeField] private Image gauge;
 
-    private float totalTime = 10;
+    private float totalTime = 900;
     private float currentTime = 0;
 
     void Update()

@@ -6,7 +6,6 @@ public class OvenController : MonoBehaviour, ICookingTools
     private SpriteRenderer originRenderer;
     private Color originalColor;
     private bool isCooking = false;
-    [SerializeField] private Transform cuttingBoardPosition;
     [SerializeField] private float cookingTime = 10f;
 
     public ComponentsManager componentsManager;
@@ -73,9 +72,12 @@ public class OvenController : MonoBehaviour, ICookingTools
         }
     }
 
-    // 기다린 후에 Output Prefab을 도마에 올려놓기
+    // 기다린 후에 Output Prefab을 주변에 놓기
     public void CreateOutput()
     {
         Debug.Log("제조가 완료되었습니다.");
+        GameObject output = Instantiate(currentDough.outputPrefab);
+        float random_x = Random.Range(1.0f, -1.0f);
+        output.transform.position = this.transform.position + new Vector3(random_x, -0.8f, 0);
     }
 }

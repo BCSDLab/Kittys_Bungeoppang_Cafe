@@ -13,6 +13,7 @@ public class Components : MonoBehaviour
             componentPrefab = componentData.ComponentPrefab;
             outputName = componentData.outputName;
             outputPrefab = componentData.outputPrefab;
+            Bungeobbang = componentData.Bungeobbang;
         }
     }
 
@@ -21,4 +22,5 @@ public class Components : MonoBehaviour
     public string type;
     public string outputName;
     public GameObject outputPrefab;
+    public GameObject Bungeobbang;
 }
