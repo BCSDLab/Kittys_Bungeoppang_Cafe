@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Avocado
   m_EditorClassIdentifier: 
   componentName: Avocado
-  ComponentPrefab: {fileID: 4320534010680992794, guid: 3a4d55b62a299ed4798bd7a97a8d767c, type: 3}
+  ComponentPrefab: {fileID: 2264627710627514846, guid: 22e9a03d8418a394484b05cacb3c8ec9, type: 3}
   type: Ingredient
   outputName: Avocado_Filling
   outputPrefab: {fileID: 4320534010680992794, guid: be5d47a32b4ffc04091ef76922bae1a0, type: 3}
