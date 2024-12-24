@@ -2,16 +2,8 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 3
-  tags:
-  - Tool_Mixer
-  - Tool_Oven
-  - Tool_Cutting_Board
-  - Ingredient
-  - Dough
-  - Bungeobbang
-  - Empty_Bungeobbang
-  - Filling
+  serializedVersion: 2
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -49,17 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Cooking Tools
-    uniqueID: 158728715
-    locked: 0
-  - name: Output Prefab
-    uniqueID: 620486315
-    locked: 0
-  - name: Bungeobbang
-    uniqueID: 1987767669
-    locked: 0
-  - name: Ingredients
-    uniqueID: 2984740281
-    locked: 0
-  m_RenderingLayers:
-  - Default

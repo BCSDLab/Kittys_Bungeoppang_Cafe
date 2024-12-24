@@ -59,15 +59,14 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
-*.unitypackage.meta
 *.app
 
 # Crashlytics generated file
 crashlytics-build.properties
 
 # Packed Addressables
-/[anjongman1029@gmail.com]ssets/[anjongman1029@gmail.com]ddressable[anjongman1029@gmail.com]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Temporary auto-generated Android Assets
-/[anjongman1029@gmail.com]ssets/[Ss]treamingAssets/aa.meta
-/[anjongman1029@gmail.com]ssets/[Ss]treamingAssets/aa/*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*

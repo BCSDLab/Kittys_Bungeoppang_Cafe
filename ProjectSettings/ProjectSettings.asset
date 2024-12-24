@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: b1e3229cdefeaae4e8744143d126a43c
+  productGUID: b1d7b5640b68f435a88350131b5410a8
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Bungeobbang_Cafe
+  productName: Kittys_Bungeoppang_Cafe
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -729,14 +729,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Bungeobbang_Cafe
+  metroPackageName: Kittys_Bungeoppang_Cafe
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Bungeobbang_Cafe
+  metroApplicationDescription: Kittys_Bungeoppang_Cafe
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -807,11 +807,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: dff01026-1408-4957-ac83-8c5f22960ac8
+  cloudProjectId: 89c7b4d1-9523-4c69-93dc-52edb1043daf
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Bungeobbang_Cafe
-  organizationId: paige4157
+  projectName: Kittys_Bungeoppang_Cafe
+  organizationId: ahnyejoon
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
