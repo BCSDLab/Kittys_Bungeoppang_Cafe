@@ -17,3 +17,4 @@ MonoBehaviour:
   type: Ingrdient
   outputName: Milk_Filling
   outputPrefab: {fileID: 8345578713191658382, guid: 2b5f1e5a6f7b26944a09a393f4bc1b3b, type: 3}
+  Bungeobbang: {fileID: 8575156241679303492, guid: c0440666e46d4e64f8eba36f8b233ebc, type: 3}

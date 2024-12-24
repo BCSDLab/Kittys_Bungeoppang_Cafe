@@ -17,3 +17,4 @@ MonoBehaviour:
   type: Ingredient
   outputName: Peach_Filling
   outputPrefab: {fileID: 3828264413416957757, guid: 2b4ff64fcef6b7c4bb3ca4699c1b1f1d, type: 3}
+  Bungeobbang: {fileID: 7248871850743397815, guid: 83f20e4920df57540a6b25a24414b05b, type: 3}

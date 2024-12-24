@@ -17,3 +17,4 @@ MonoBehaviour:
   type: Ingredient
   outputName: Red_Pepper_Filling
   outputPrefab: {fileID: 1781019392311784356, guid: 924084b2a8e21ec47b8d334c296e0aec, type: 3}
+  Bungeobbang: {fileID: 6063413518707096388, guid: ceae39a58d4a2a746a8b06ce219affc8, type: 3}
