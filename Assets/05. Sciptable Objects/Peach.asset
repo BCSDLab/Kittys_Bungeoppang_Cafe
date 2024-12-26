@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Peach
   m_EditorClassIdentifier: 
   componentName: Peach
-  ComponentPrefab: {fileID: 3828264413416957757, guid: 1f8e69bb0885dd045a935b4c01a36fdd, type: 3}
+  ComponentPrefab: {fileID: 8144545259558983014, guid: 6c7e4dba846c9804c8e037d55c19f193, type: 3}
   type: Ingredient
-  outputName: Peach_Filling
-  outputPrefab: {fileID: 3828264413416957757, guid: 2b4ff64fcef6b7c4bb3ca4699c1b1f1d, type: 3}
-  Bungeobbang: {fileID: 7248871850743397815, guid: 83f20e4920df57540a6b25a24414b05b, type: 3}
+  outputName: Filling_Peach
+  outputPrefab: {fileID: 6764542547323592399, guid: 6a3a7e7b30c38124ab1f1dc18326064c, type: 3}
+  Bungeobbang: {fileID: 4244115912923144893, guid: 49834628cc40a1641bfb60004eaaf81d, type: 3}

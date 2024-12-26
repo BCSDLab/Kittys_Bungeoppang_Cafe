@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d334b5e3e77c42f44a18097538a6e41b, type: 3}
   m_Name: Dough
   m_EditorClassIdentifier: 
-  componentName: Dough
-  ComponentPrefab: {fileID: 5884328148387669146, guid: 93ab0017be5c51e489b7cc93dcdb8616, type: 3}
+  componentName: Plain_Flour
+  ComponentPrefab: {fileID: 5326268287156470362, guid: 6b07b94a93605bf4da8e7991b22e31e8, type: 3}
   type: Dough
   outputName: Empty_Bungeobbang
   outputPrefab: {fileID: 6063413518707096388, guid: 86d54148f69c1db4ab7fedff02f04f67, type: 3}
+  Bungeobbang: {fileID: 0}

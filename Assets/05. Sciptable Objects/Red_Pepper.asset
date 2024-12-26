@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Red_Pepper
   m_EditorClassIdentifier: 
   componentName: Red_Pepper
-  ComponentPrefab: {fileID: 1781019392311784356, guid: 0fd1fd13410bb124286892c648ec46b5, type: 3}
+  ComponentPrefab: {fileID: 5860482811011662842, guid: d23813279764d6e4eb9a39b4c86e29d2, type: 3}
   type: Ingredient
-  outputName: Red_Pepper_Filling
-  outputPrefab: {fileID: 1781019392311784356, guid: 924084b2a8e21ec47b8d334c296e0aec, type: 3}
-  Bungeobbang: {fileID: 6063413518707096388, guid: ceae39a58d4a2a746a8b06ce219affc8, type: 3}
+  outputName: Filling_Red_Pepper
+  outputPrefab: {fileID: 7014860288090578658, guid: d04cd8844b38dce43bb9892f3ca81c36, type: 3}
+  Bungeobbang: {fileID: 8957428123332648552, guid: 2d9a29e414228694c98d579cc57b1d8b, type: 3}
