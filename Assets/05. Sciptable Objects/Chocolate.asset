@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Chocolate
   m_EditorClassIdentifier: 
   componentName: Chocolate
-  ComponentPrefab: {fileID: 4231776180626201936, guid: dcb654d26faf8d74e986d60964b613f3, type: 3}
+  ComponentPrefab: {fileID: 2892596616131536555, guid: 89e7b2319af06b6469d5a9cfacc7b453, type: 3}
   type: Ingredient
-  outputName: Filling_Chocolate
-  outputPrefab: {fileID: 1175260952480233075, guid: 67a436f6e8ebcff45882866130ecc0a0, type: 3}
-  Bungeobbang: {fileID: 5038265509042550330, guid: 5edfda9c270707e41b9014c7ed5f9fc8, type: 3}
+  outputName: Chocolate_Filling
+  outputPrefab: {fileID: 3711462599748702068, guid: 76a2704375ac05442904608d11e1c3d8, type: 3}
+  Bungeobbang: {fileID: 4347305148930532226, guid: 650e008d66f70ba48b919c464f46797e, type: 3}

@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class MixerController : MonoBehaviour, ICookingTools
 {
-    [SerializeField] private float cookingTime = 5f;
+    [SerializeField] public float cookingTime = 5f;
     [SerializeField] MixerTimeBar mixerTimeBar;
-    private ComponentsSO currentIngredient;
-    
 
+    private ComponentsSO currentIngredient;
 
     // 믹서기에 재료 넣기
     public void CheckComponent(GameObject ingredient)
@@ -37,9 +36,10 @@ public class MixerController : MonoBehaviour, ICookingTools
         currentIngredient = null;
     }
 
-    // 기다린 후에 필링을 주변에 놓기
+    // 기다린 후에 Output Prefab을 주변에 놓기
     public void CreateOutput()
     {
+        Debug.Log("제조가 완료되었습니다.");
         GameObject output = Instantiate(currentIngredient.outputPrefab);
         float random_x = Random.Range(0.8f, -0.8f);
         output.transform.position = this.transform.position + new Vector3(random_x, -0.8f, 0);

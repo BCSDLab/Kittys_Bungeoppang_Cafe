@@ -3,8 +3,11 @@ using UnityEngine;
 public class DragAndDropItem : MonoBehaviour
 {
     private DraggableItem draggableItem;
+    
     [SerializeField] MixerController mixerController;
     [SerializeField] OvenController ovenController;
+    [SerializeField] BungeobbangController bungeobbangController;
+
     private Camera mainCamera;
     private Vector2 startPosition;
 
@@ -46,7 +49,6 @@ public class DragAndDropItem : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("아이템 놓기");
             if (draggableItem != null)
             {
                 // 재료를 믹서기에 전달
@@ -61,7 +63,24 @@ public class DragAndDropItem : MonoBehaviour
                     ovenController.CheckComponent(draggableItem.gameObject);
                 }
 
-                // 원래 자리로 돌려 놓기
+                // 필링을 붕어빵에 드롭
+                else if (draggableItem.CompareTag("Filling"))
+                {
+                    if (bungeobbangController.bungeobbang1 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang1.gameObject))
+                    {
+                        bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang1.gameObject, draggableItem.gameObject);
+                    }
+                    else if (bungeobbangController.bungeobbang2 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang2.gameObject))
+                    {
+                        bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang2.gameObject, draggableItem.gameObject);
+                    }
+                    else if (bungeobbangController.bungeobbang3 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang3.gameObject))
+                    {
+                        bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang3.gameObject, draggableItem.gameObject);
+                    }
+                }
+
+                // 드래그 후 원래 위치로
                 if (draggableItem != null)
                 {
                     draggableItem.transform.position = startPosition;

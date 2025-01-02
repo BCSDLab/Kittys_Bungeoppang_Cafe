@@ -8,7 +8,7 @@ public class TimeController : MonoBehaviour
 {
     [SerializeField] private Image gauge;
 
-    private float totalTime = 900;
+    [SerializeField] private float gamePlayTime = 300;
     private float currentTime = 0;
 
     void Update()
@@ -19,9 +19,9 @@ public class TimeController : MonoBehaviour
     void Timer()
     {
         currentTime += Time.deltaTime;
-        gauge.fillAmount = 1 - currentTime / totalTime;
+        gauge.fillAmount = 1 - currentTime / gamePlayTime;
 
-        if (currentTime >= totalTime)
+        if (currentTime >= gamePlayTime)
         {
             currentTime = 0;
             ChangetoEndingScene();
@@ -30,6 +30,6 @@ public class TimeController : MonoBehaviour
 
     void ChangetoEndingScene()
     {
-        SceneManager.LoadScene("EndingPage");
+        SceneManager.LoadScene("Ending_Best_Scene");
     }
 }

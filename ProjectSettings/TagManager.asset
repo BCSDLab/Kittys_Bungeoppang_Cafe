@@ -61,5 +61,8 @@ TagManager:
   - name: Bungeobbang
     uniqueID: 1987767669
     locked: 0
+  - name: Drag Item
+    uniqueID: 4074986783
+    locked: 0
   m_RenderingLayers:
   - Default

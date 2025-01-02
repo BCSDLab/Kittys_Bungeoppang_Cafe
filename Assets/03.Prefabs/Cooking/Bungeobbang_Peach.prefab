@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4244115912923144893
+--- !u!1 &1976259378075253032
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8270380735638659647}
-  - component: {fileID: 8868508608934647874}
-  - component: {fileID: -2422653295768174486}
-  - component: {fileID: -477331251411384980}
+  - component: {fileID: 1141045132015114928}
+  - component: {fileID: 8450619308481030661}
+  - component: {fileID: 3262660877283255587}
+  - component: {fileID: 5003865546934405162}
   m_Layer: 0
   m_Name: Bungeobbang_Peach
-  m_TagString: Untagged
+  m_TagString: Bungeobbang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8270380735638659647
+--- !u!4 &1141045132015114928
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4244115912923144893}
+  m_GameObject: {fileID: 1976259378075253032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,13 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8868508608934647874
+--- !u!212 &8450619308481030661
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4244115912923144893}
+  m_GameObject: {fileID: 1976259378075253032}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 1987767669
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7154096598637016128, guid: 5cc4f799b98a9ea40b9b3ba7ccf0d6cd, type: 3}
+  m_Sprite: {fileID: -7154096598637016128, guid: 5d2200b52d6060d40aeb0001615b1202, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,32 +89,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2422653295768174486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4244115912923144893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d536ec14d2ed5e419425cc3f761fbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentData: {fileID: 0}
-  componentName: 
-  componentPrefab: {fileID: 0}
-  type: 
-  outputName: 
-  outputPrefab: {fileID: 0}
-  Bungeobbang: {fileID: 0}
---- !u!60 &-477331251411384980
+--- !u!60 &3262660877283255587
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4244115912923144893}
+  m_GameObject: {fileID: 1976259378075253032}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -192,3 +173,17 @@ PolygonCollider2D:
       - {x: 0.39499998, y: -0.995}
       - {x: 0.33499998, y: -0.895}
   m_UseDelaunayMesh: 0
+--- !u!114 &5003865546934405162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976259378075253032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8996dac3c91037c47b8c20c944b38d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientData: {fileID: 0}
+  isDrag: 0

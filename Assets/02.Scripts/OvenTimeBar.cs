@@ -8,10 +8,16 @@ public class OvenTimeBar : MonoBehaviour
 {
     [SerializeField] private GameObject timeBar;
     [SerializeField] private Image currentGauge;
+    [SerializeField] private OvenController ovenController;
 
-    private float totalTime = 10f;
+    private float totalTime;
     private float currentTime = 0f;
     private bool isRunning = false;
+
+    void Start()
+    {
+        totalTime = ovenController.cookingTime;
+    }
 
     void Update()
     {
@@ -47,6 +53,5 @@ public class OvenTimeBar : MonoBehaviour
     {
         timeBar.SetActive(false);
         isRunning = false;
-        Debug.Log("타이머 완료!");
     }
 }

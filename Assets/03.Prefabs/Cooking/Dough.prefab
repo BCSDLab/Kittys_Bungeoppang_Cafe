@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4589829373607090775}
   - component: {fileID: 5339428869228217833}
-  - component: {fileID: 1008909362123691796}
-  - component: {fileID: 5871725810212004144}
   - component: {fileID: -1517096902909778918}
+  - component: {fileID: 1231261947104068376}
+  - component: {fileID: 3754744173244622329}
   m_Layer: 0
   m_Name: Dough
-  m_TagString: Ingredient
+  m_TagString: Dough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5884328148387669146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.4, z: 1}
+  m_LocalPosition: {x: 1.78, y: -1.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,10 +76,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_SortingLayerID: -1310227015
+  m_SortingLayer: 4
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 2237971650444136707, guid: 3cbe64f2edd65164584d946704ef182c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,7 +90,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1008909362123691796
+--- !u!114 &-1517096902909778918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884328148387669146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d536ec14d2ed5e419425cc3f761fbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentData: {fileID: 11400000, guid: 404d23305e4128d40885b73f301098d8, type: 2}
+  componentName: 
+  componentPrefab: {fileID: 0}
+  type: 
+  outputName: 
+  outputPrefab: {fileID: 0}
+  Bungeobbang: {fileID: 0}
+--- !u!114 &1231261947104068376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,8 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientData: {fileID: 0}
   isDrag: 0
---- !u!61 &5871725810212004144
-BoxCollider2D:
+--- !u!60 &3754744173244622329
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -142,29 +161,36 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 1.56, y: 1.77}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.7}
-  m_EdgeRadius: 0
---- !u!114 &-1517096902909778918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884328148387669146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d536ec14d2ed5e419425cc3f761fbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentData: {fileID: 0}
-  componentName: 
-  componentPrefab: {fileID: 0}
-  type: 
-  outputName: 
-  outputPrefab: {fileID: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.77, y: 0.024999999}
+      - {x: 0.72999996, y: 0.39499998}
+      - {x: 0.7, y: 0.695}
+      - {x: 0.63, y: 0.775}
+      - {x: 0.53, y: 0.815}
+      - {x: 0.42999998, y: 0.84499997}
+      - {x: 0.22, y: 0.885}
+      - {x: -0.19, y: 0.885}
+      - {x: -0.52, y: 0.84499997}
+      - {x: -0.63, y: 0.745}
+      - {x: -0.72999996, y: 0.60499996}
+      - {x: -0.76, y: 0.525}
+      - {x: -0.77, y: 0.405}
+      - {x: -0.77, y: -0.095}
+      - {x: -0.76, y: -0.33499998}
+      - {x: -0.7, y: -0.705}
+      - {x: -0.62, y: -0.805}
+      - {x: -0.53, y: -0.84499997}
+      - {x: -0.42999998, y: -0.85499996}
+      - {x: -0.19999999, y: -0.875}
+      - {x: 0.31, y: -0.875}
+      - {x: 0.45, y: -0.835}
+      - {x: 0.63, y: -0.715}
+      - {x: 0.77, y: -0.575}
+  m_UseDelaunayMesh: 0
