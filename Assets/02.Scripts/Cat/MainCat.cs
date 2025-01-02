@@ -5,10 +5,10 @@ using UnityEngine.Events;
 [System.Serializable]
 public class EventData
 {
-    public Transform intermediatePosition; // 중간 위치 (Transform으로 변경)
-    public Transform finalPosition;       // 최종 위치 (Transform으로 변경)
-    public string message;                // 이벤트와 함께 전달할 메시지
-    public int prefabIndex;               // 불러올 프리팹의 인덱스 (1~5)
+    public Transform intermediatePosition;
+    public Transform finalPosition;
+    public string message;
+    public int prefabIndex;
 }
 
 [System.Serializable]
@@ -17,23 +17,26 @@ public class ResponseEvent : UnityEvent<EventData> { }
 public class MainCat : MonoBehaviour
 {
     [SerializeField] private Transform startPoint;
-    [SerializeField] private Transform intermediatePoint; // 중간 위치 추가
-    [SerializeField] private Transform finalPoint;        // 최종 위치 추가
+    [SerializeField] private Transform intermediatePoint;
+    [SerializeField] private Transform finalPoint;
     [SerializeField] private float slideSpeed = 2f;
     [SerializeField] private float bobHeight = 0.1f;
     [SerializeField] private float bobSpeed = 3f;
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject[] prefabs; // 1~5에 해당하는 프리팹
+    [SerializeField] private GameObject[] prefabs;
 
     [Header("Branch Configuration")]
-    [SerializeField] private int branch; // DialogSystem에서 전달받은 branch 값
+    [SerializeField] private int branch;
+    [SerializeField] private string triggerTag = "Bungeobbang";
 
-    // 출력 이벤트: 처리가 완료된 정보를 외부로 전달
     public ResponseEvent OnEventProcessed;
 
     private EventData currentEventData;
     private State currentState = State.Start;
+
+    private bool isOverlapping = false; // 충돌 상태 확인 변수
+    private GameObject overlappingObject; // 충돌 중인 오브젝트
 
     private enum State
     {
@@ -83,7 +86,7 @@ public class MainCat : MonoBehaviour
             int index = eventData.prefabIndex - 1;
             if (prefabs[index] != null)
             {
-                GameObject instantiatedPrefab = Instantiate(prefabs[index], transform.position, Quaternion.identity, transform);
+                Instantiate(prefabs[index], transform.position, Quaternion.identity, transform);
                 Debug.Log($"Prefab {eventData.prefabIndex} instantiated as child of {gameObject.name}.");
             }
             else
@@ -99,21 +102,30 @@ public class MainCat : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // 마우스 좌클릭으로 중간 위치로 이동
+        if (Input.GetMouseButtonDown(0) && currentState == State.Start)
         {
-            if (currentState == State.Start)
-            {
-                StartCoroutine(SlideSequence(currentEventData.intermediatePosition.position));
-                currentState = State.Intermediate;
-            }
-            else if (currentState == State.Intermediate)
-            {
-                StartCoroutine(SlideSequence(currentEventData.finalPosition.position));
-                currentState = State.Final;
-            }
+            StartCoroutine(SlideSequence(currentEventData.intermediatePosition.position));
+            currentState = State.Intermediate;
+        }
+
+        // 마우스 우클릭으로 최종 위치로 이동
+        if (Input.GetMouseButtonDown(0) && currentState == State.Intermediate)
+        {
+            StartCoroutine(SlideSequence(currentEventData.finalPosition.position));
+            currentState = State.Final;
+            isOverlapping = false; // 상태 초기화
+        }
+
+        // 최종 위치에 도달한 경우 x 위치를 -5로 변경
+        if (currentState == State.Final && Vector3.Distance(transform.position, finalPoint.position) < 0.01f)
+        {
+            transform.position = new Vector3(-5f, transform.position.y, transform.position.z); // x 위치를 -5로 변경
+            currentState = State.Start; // 상태 초기화
+            Debug.Log("X position set to -5 and state reset to Start.");
         }
     }
-
+    
     private IEnumerator SlideSequence(Vector3 targetPosition)
     {
         Vector3 startPosition = transform.position;
@@ -133,5 +145,43 @@ public class MainCat : MonoBehaviour
         }
 
         transform.position = targetPosition;
+    }
+
+    public void SetIsOverlapping(bool value, GameObject otherObject = null)
+    {
+        isOverlapping = value;
+        overlappingObject = value ? otherObject : null;
+
+        if (value && otherObject != null)
+        {
+            Debug.Log($"Overlapping started with: {otherObject.name}");
+        }
+        else
+        {
+            Debug.Log("Overlapping stopped.");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(triggerTag))
+        {
+            SetIsOverlapping(true, other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag(triggerTag))
+        {
+            SetIsOverlapping(false);
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        // 마우스 클릭으로 isOverlapping 변경
+        SetIsOverlapping(true, gameObject);
+        Debug.Log($"Object {name} clicked. isOverlapping set to true.");
     }
 }
