@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cinnamon_0: -6176264708628463375
+      Cinnamon_1: 7748878703769988358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

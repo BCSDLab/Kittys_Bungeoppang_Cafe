@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Candy cane_0: -3132407155569504866
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

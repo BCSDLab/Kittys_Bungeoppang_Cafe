@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Baking tray_0: 3204182884603305006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

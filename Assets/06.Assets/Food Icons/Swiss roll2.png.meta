@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Swiss roll2_0: 8620871081402277048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

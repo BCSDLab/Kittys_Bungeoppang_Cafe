@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Poached egg_0: 375827467005023837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

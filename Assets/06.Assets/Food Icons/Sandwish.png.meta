@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sandwish_0: -8861996240657886834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

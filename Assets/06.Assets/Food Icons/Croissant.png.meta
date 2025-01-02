@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Croissant_0: 8689319978456130346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

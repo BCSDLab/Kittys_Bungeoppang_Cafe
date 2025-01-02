@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Beacon_0: 4375991053284990686
+      Beacon_1: -751485045744417676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

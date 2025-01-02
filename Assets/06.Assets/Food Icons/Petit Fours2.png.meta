@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Petit Fours2_0: -4541703968824244929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

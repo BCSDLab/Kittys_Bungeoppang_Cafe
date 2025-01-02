@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Temaki_0: 1049643437193712307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

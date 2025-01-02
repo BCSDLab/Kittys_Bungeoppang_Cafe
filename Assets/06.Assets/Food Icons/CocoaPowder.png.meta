@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CocoaPowder_0: -2456347257385665907
+      CocoaPowder_1: 5565490521072744475
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

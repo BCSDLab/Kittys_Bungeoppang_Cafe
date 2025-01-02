@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Avocado_0: 8028362493962905751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

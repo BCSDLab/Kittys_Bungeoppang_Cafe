@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dango3_0: 5430183713884367001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Candy8_0: -5212430055658425437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

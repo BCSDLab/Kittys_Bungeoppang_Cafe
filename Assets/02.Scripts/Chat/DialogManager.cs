@@ -7,48 +7,52 @@ public class DialogManager : MonoBehaviour
 {
     [SerializeField] 
     private DialogSystem dialogSystem01;
-    [SerializeField] 
-    private DialogSystem dialogSystem02;
-    [SerializeField] 
-    private TextMeshProUGUI textCountdown;
 
-    private IEnumerator Start()
+    [SerializeField] 
+    private MainCat mainCat; // MainCat 클래스 참조 추가
+
+    private bool isTouchActive = false; // 터치 입력 활성화 플래그
+
+    private void Start()
     {
-        textCountdown.gameObject.SetActive(false);
-
-        yield return WaitForDialog(dialogSystem01);
-        
-        textCountdown.gameObject.SetActive(true);
-        int count = 5;
-        while (count > 0)
-        {
-            textCountdown.text = count.ToString();
-            count--;
-
-            yield return new WaitForSeconds(1);
-        }
-        textCountdown.gameObject.SetActive(false);
-
-        yield return WaitForDialog(dialogSystem02);
-        
-        textCountdown.gameObject.SetActive(true);
-        textCountdown.text = "The End";
-
-        yield return new WaitForSeconds(2);
-
-        UnityEditor.EditorApplication.ExitPlaymode();
+        StartCoroutine(WaitForDialogOnTouch(dialogSystem01));
     }
 
-    private IEnumerator WaitForDialog(DialogSystem dialogSystem)
+    private void Update()
+    {
+        // 화면 터치 또는 클릭 입력 확인
+        if (Input.GetMouseButtonDown(0)) // 모바일과 에디터에서 모두 동작 (0: 좌클릭 또는 터치)
+        {
+            isTouchActive = true;
+        }
+    }
+
+    private IEnumerator WaitForDialogOnTouch(DialogSystem dialogSystem)
     {
         while (true)
         {
             try
             {
-                // dialogSystem의 UpdateDialog를 안전하게 호출
-                if (dialogSystem.UpdateDialog())
+                if (isTouchActive)
                 {
-                    yield break; // 대화가 종료되면 루프 탈출
+                    isTouchActive = false;
+
+                    // 랜덤 숫자 생성 (1~150)
+                    int randomValue = UnityEngine.Random.Range(1, 151);
+
+                    // 랜덤 숫자를 DialogSystem에 전달
+                    dialogSystem.ReceiveRandomValue(randomValue);
+
+                    // 랜덤 숫자를 30으로 나눈 값을 MainCat에 전달
+                    int dividedValue = randomValue / 30;
+                    mainCat.ReceiveDividedValue(dividedValue);
+
+                    // 대화 진행, 종료 시 루프 탈출
+                    bool isDialogComplete = dialogSystem.UpdateDialog(); 
+                    if (isDialogComplete)
+                    {
+                        yield break;
+                    }
                 }
             }
             catch (IndexOutOfRangeException e)
@@ -57,7 +61,7 @@ public class DialogManager : MonoBehaviour
                 yield break; // 문제 발생 시 루프 탈출
             }
 
-            yield return null; // 다음 프레임까지 대기
+            yield return null;
         }
     }
 }

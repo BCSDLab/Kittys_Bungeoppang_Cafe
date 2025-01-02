@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Canned fish_0: -2107816191604328810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chestnut_0: -409440400497839121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Taiyaki_0: -828527482281258920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mille-Feuille_0: 6869725837480472209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

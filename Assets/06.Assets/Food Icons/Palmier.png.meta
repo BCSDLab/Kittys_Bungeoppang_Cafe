@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Palmier_0: -2615059711073002768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

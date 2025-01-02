@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Yogurt1_0: -3909966481942093379
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Canned tomatoes_0: -4664382131120747134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

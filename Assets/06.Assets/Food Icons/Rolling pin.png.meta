@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rolling pin_0: -6768453210976540769
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

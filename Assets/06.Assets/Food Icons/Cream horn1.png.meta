@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cream horn1_0: 4165978115182273602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

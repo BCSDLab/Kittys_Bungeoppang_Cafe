@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Candy6_0: 8631149844670608208
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Macaron3_0: -2817886878609468297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gingerbread man1_0: 4026180998316267932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
