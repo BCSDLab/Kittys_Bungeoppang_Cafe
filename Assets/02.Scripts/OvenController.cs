@@ -3,20 +3,24 @@ using UnityEngine;
 
 public class OvenController : MonoBehaviour, ICookingTools
 {
+    private SpriteRenderer originRenderer;
+    private Color originalColor;
+    private bool isCooking = false;
     [SerializeField] private float cookingTime = 10f;
 
-    [SerializeField] OvenTimeBar ovenTimeBar;
-
-    [SerializeField] private GameObject bungeobbang1;
-    [SerializeField] private GameObject bungeobbang2;
-    [SerializeField] private GameObject bungeobbang3;
-
-    private bool bungeobbang1State = false;
-    private bool bungeobbang2State = false;
-    private bool bungeobbang3State = false;
-
+    public ComponentsManager componentsManager;
     private ComponentsSO currentDough;
 
+    void Start()
+    {
+        originRenderer = GetComponent<SpriteRenderer>();
+
+        // 초기 색상 저장
+        if (originRenderer != null)
+        {
+            originalColor = originRenderer.color;
+        }
+    }
 
     // 믹서기에 재료 넣기
     public void CheckComponent(GameObject dough)
@@ -32,7 +36,6 @@ public class OvenController : MonoBehaviour, ICookingTools
         if (component != null && component.componentData != null)
         {
             currentDough = component.componentData;
-            ovenTimeBar.StartTimer();
             StartCoroutine(ProcessCooking());
         }
     }
@@ -41,32 +44,40 @@ public class OvenController : MonoBehaviour, ICookingTools
     public IEnumerator ProcessCooking()
     {
         Debug.Log("반죽을 굽는 중입니다...");
+        ChangeColor();
         yield return new WaitForSeconds(cookingTime);
+        ChangeColor();
         CreateOutput();
         currentDough = null;
     }
 
-    // 기다린 후에 도마에 붕어빵 놓기
-    public void CreateOutput()
+    // 굽는 동안 오븐을 해당 반죽의 색깔로 바꾸기
+    public void ChangeColor()
     {
-        if(bungeobbang1State == false)
+        isCooking = !isCooking;
+
+        SpriteRenderer ovenRenderer = GetComponent<SpriteRenderer>();
+        if (ovenRenderer == null || currentDough == null) return;
+
+        SpriteRenderer doughRenderer = currentDough.ComponentPrefab.GetComponent<SpriteRenderer>();
+        if (doughRenderer == null) return;
+
+        if (isCooking)
         {
-            bungeobbang1.SetActive(true);
-            bungeobbang1State = true;
-        }
-        else if(bungeobbang2State == false)
-        {
-            bungeobbang2.SetActive(true);
-            bungeobbang2State = true;
-        }
-        else if(bungeobbang3State == false)
-        {
-            bungeobbang3.SetActive(true);
-            bungeobbang3State = true;
+            ovenRenderer.color = doughRenderer.color;
         }
         else
         {
-            Debug.Log("붕어빵을 놓을 자리가 부족합니다.");
+            ovenRenderer.color = originalColor;
         }
+    }
+
+    // 기다린 후에 Output Prefab을 주변에 놓기
+    public void CreateOutput()
+    {
+        Debug.Log("제조가 완료되었습니다.");
+        GameObject output = Instantiate(currentDough.outputPrefab);
+        float random_x = Random.Range(1.0f, -1.0f);
+        output.transform.position = this.transform.position + new Vector3(random_x, -0.8f, 0);
     }
 }

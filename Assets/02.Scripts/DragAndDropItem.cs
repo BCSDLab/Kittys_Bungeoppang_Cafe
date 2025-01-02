@@ -46,7 +46,6 @@ public class DragAndDropItem : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("아이템 놓기");
             if (draggableItem != null)
             {
                 // 재료를 믹서기에 전달
@@ -61,7 +60,20 @@ public class DragAndDropItem : MonoBehaviour
                     ovenController.CheckComponent(draggableItem.gameObject);
                 }
 
-                // 원래 자리로 돌려 놓기
+                // 붕어빵에 필링 넣기
+                else if (draggableItem.gameObject.CompareTag("Empty_Bungeobbang"))
+                {
+                    CombineComponents combineComponents = GetComponent<CombineComponents>();
+                    if (combineComponents != null)
+                    {
+                        combineComponents.CheckFilling(draggableItem.gameObject);
+                    }
+                    else
+                    {
+                        Debug.Log("nope");
+                    }
+                }
+
                 if (draggableItem != null)
                 {
                     draggableItem.transform.position = startPosition;

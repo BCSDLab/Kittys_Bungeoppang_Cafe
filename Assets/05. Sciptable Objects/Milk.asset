@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Milk
   m_EditorClassIdentifier: 
   componentName: Milk
-  ComponentPrefab: {fileID: 2372843738505052004, guid: 0e06aef17967c2142bf988f25cf97100, type: 3}
+  ComponentPrefab: {fileID: 8345578713191658382, guid: 6c04c773ab9a6b34e91e98f31a812e11, type: 3}
   type: Ingrdient
-  outputName: Filling_Milk
-  outputPrefab: {fileID: 4707727141757250749, guid: cd828d38f642416428145de543cf740c, type: 3}
-  Bungeobbang: {fileID: 3881896173944275953, guid: 3859ca41aa6776a48843c5fefad6374c, type: 3}
+  outputName: Milk_Filling
+  outputPrefab: {fileID: 8345578713191658382, guid: 2b5f1e5a6f7b26944a09a393f4bc1b3b, type: 3}
+  Bungeobbang: {fileID: 8575156241679303492, guid: c0440666e46d4e64f8eba36f8b233ebc, type: 3}

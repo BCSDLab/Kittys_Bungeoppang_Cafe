@@ -15,6 +15,6 @@ MonoBehaviour:
   componentName: Avocado
   ComponentPrefab: {fileID: 4320534010680992794, guid: 3a4d55b62a299ed4798bd7a97a8d767c, type: 3}
   type: Ingredient
-  outputName: Filling_Avocado
-  outputPrefab: {fileID: 431900894028519063, guid: f445e702816d0df4b9276089ec37c0aa, type: 3}
-  Bungeobbang: {fileID: 254494557545901848, guid: 3ef78df684e41a24ebfbe8a4fc32d72d, type: 3}
+  outputName: Avocado_Filling
+  outputPrefab: {fileID: 4320534010680992794, guid: be5d47a32b4ffc04091ef76922bae1a0, type: 3}
+  Bungeobbang: {fileID: 463067227137790805, guid: 2842d0bf1c624904da41bb4e2a023ffe, type: 3}

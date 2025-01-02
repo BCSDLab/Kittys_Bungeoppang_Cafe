@@ -3,11 +3,24 @@ using UnityEngine;
 
 public class MixerController : MonoBehaviour, ICookingTools
 {
+    private SpriteRenderer originRenderer;
+    private Color originalColor;
+    private bool isCooking = false;
     [SerializeField] private float cookingTime = 5f;
-    [SerializeField] MixerTimeBar mixerTimeBar;
-    private ComponentsSO currentIngredient;
-    
 
+    private ComponentsSO currentIngredient;
+
+
+    void Start()
+    {
+        originRenderer = GetComponent<SpriteRenderer>();
+        
+        // 초기 색상 저장
+        if (originRenderer != null)
+        {
+            originalColor = originRenderer.color; 
+        }
+    }
 
     // 믹서기에 재료 넣기
     public void CheckComponent(GameObject ingredient)
@@ -23,7 +36,6 @@ public class MixerController : MonoBehaviour, ICookingTools
         if (component != null && component.componentData != null)
         {
             currentIngredient = component.componentData;
-            mixerTimeBar.StartTimer();
             StartCoroutine(ProcessCooking());
         }
     }
@@ -32,14 +44,38 @@ public class MixerController : MonoBehaviour, ICookingTools
     public IEnumerator ProcessCooking()
     {
         Debug.Log("재료를 섞는 중입니다...");
+        ChangeColor();
         yield return new WaitForSeconds(cookingTime);
+        ChangeColor();
         CreateOutput();
         currentIngredient = null;
     }
+    
+    // 섞는 동안 믹서기를 해당 재료의 색깔로 바꾸기
+    public void ChangeColor()
+    {
+        isCooking = !isCooking;
 
-    // 기다린 후에 필링을 주변에 놓기
+        SpriteRenderer mixerRenderer = GetComponent<SpriteRenderer>();
+        if (mixerRenderer == null || currentIngredient == null) return;
+
+        SpriteRenderer ingredientRenderer = currentIngredient.ComponentPrefab.GetComponent<SpriteRenderer>();
+        if (ingredientRenderer == null) return;
+
+        if (isCooking)
+        {
+            mixerRenderer.color = ingredientRenderer.color;
+        }
+        else
+        {
+            mixerRenderer.color = originalColor;
+        }
+    }
+
+    // 기다린 후에 Output Prefab을 주변에 놓기
     public void CreateOutput()
     {
+        Debug.Log("제조가 완료되었습니다.");
         GameObject output = Instantiate(currentIngredient.outputPrefab);
         float random_x = Random.Range(0.8f, -0.8f);
         output.transform.position = this.transform.position + new Vector3(random_x, -0.8f, 0);

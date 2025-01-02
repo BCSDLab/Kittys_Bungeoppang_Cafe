@@ -55,11 +55,11 @@ TagManager:
   - name: Output Prefab
     uniqueID: 620486315
     locked: 0
-  - name: Ingredients
-    uniqueID: 2984740281
-    locked: 0
   - name: Bungeobbang
     uniqueID: 1987767669
+    locked: 0
+  - name: Ingredients
+    uniqueID: 2984740281
     locked: 0
   m_RenderingLayers:
   - Default
