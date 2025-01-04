@@ -7,6 +7,7 @@ public class DragAndDropItem : MonoBehaviour
     [SerializeField] MixerController mixerController;
     [SerializeField] OvenController ovenController;
     [SerializeField] BungeobbangController bungeobbangController;
+    [SerializeField] MainCat catController;
 
     private Camera mainCamera;
     private Vector2 startPosition;
@@ -22,7 +23,7 @@ public class DragAndDropItem : MonoBehaviour
         PutDownItem();
     }
 
-    // ¾ÆÀÌÅÛ Áı±â
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void PickUpItem()
     {
         if (Input.GetMouseButtonDown(0))
@@ -36,7 +37,7 @@ public class DragAndDropItem : MonoBehaviour
 
                 if (draggableItem != null)
                 {
-                    Debug.Log("¾ÆÀÌÅÛ Áı±â");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
                     startPosition = draggableItem.transform.position;
                     draggableItem.isDrag = true;
                 }
@@ -44,26 +45,26 @@ public class DragAndDropItem : MonoBehaviour
         }
     }
 
-    // ¾ÆÀÌÅÛ ³õ±â
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void PutDownItem()
     {
         if (Input.GetMouseButtonUp(0))
         {
             if (draggableItem != null)
             {
-                // Àç·á¸¦ ¹Í¼­±â¿¡ Àü´Ş
+                // ï¿½ï¿½á¸¦ ï¿½Í¼ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½
                 if (mixerController != null && draggableItem.CompareTag("Ingredient") && IsOverlapping(draggableItem.gameObject, mixerController.gameObject))
                 {
                     mixerController.CheckComponent(draggableItem.gameObject);
                 }
 
-                // ¹İÁ×À» ¿Àºì¿¡ Àü´Ş
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½
                 else if (ovenController != null && draggableItem.CompareTag("Dough") && IsOverlapping(draggableItem.gameObject, ovenController.gameObject))
                 {
                     ovenController.CheckComponent(draggableItem.gameObject);
                 }
 
-                // ÇÊ¸µÀ» ºØ¾î»§¿¡ µå·Ó
+                // ï¿½Ê¸ï¿½ï¿½ï¿½ ï¿½Ø¾î»§ï¿½ï¿½ ï¿½ï¿½ï¿½
                 else if (draggableItem.CompareTag("Filling"))
                 {
                     if (bungeobbangController.bungeobbang1 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang1.gameObject))
@@ -79,8 +80,25 @@ public class DragAndDropItem : MonoBehaviour
                         bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang3.gameObject, draggableItem.gameObject);
                     }
                 }
+                
+                else if (draggableItem.CompareTag("Cat"))
+                {
+                    if (catController != null)
+                    {
+                        Components components = draggableItem.GetComponent<Components>();
+                        if (components != null && components.componentData != null)
+                        {
+                            catController.ReceiveBungeobbangData(components.componentData);
+                            Debug.Log($"ê³ ì–‘ì´ì—ê²Œ ì•„ì´í…œ ì „ë‹¬: {components.componentData.componentName}");
+                        }
+                        else
+                        {
+                            Debug.LogWarning("ì•„ì´í…œì— ìœ íš¨í•œ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
+                        }
+                    }
+                }
 
-                // µå·¡±× ÈÄ ¿ø·¡ À§Ä¡·Î
+                // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½
                 if (draggableItem != null)
                 {
                     draggableItem.transform.position = startPosition;
@@ -91,7 +109,7 @@ public class DragAndDropItem : MonoBehaviour
         }
     }
 
-    // °ãÃÄÀÖ´ÂÁö È®ÀÎÇÏ±â
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï±ï¿½
     private bool IsOverlapping(GameObject obj1, GameObject obj2)
     {
 

@@ -12,6 +12,7 @@ TagManager:
   - Bungeobbang
   - Empty_Bungeobbang
   - Filling
+  - Cat
   layers:
   - Default
   - TransparentFX
