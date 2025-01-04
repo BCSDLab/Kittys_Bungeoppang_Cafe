@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeToGamePlayScene()
     {
-        SceneManager.LoadScene("Game_Play_Scene");
+        SceneManager.LoadScene("Play_Scene");
     }
 
     public void ChangeToBestEndingScene()
