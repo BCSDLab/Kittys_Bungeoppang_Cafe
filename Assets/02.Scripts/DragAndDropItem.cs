@@ -6,7 +6,7 @@ public class DragAndDropItem : MonoBehaviour
     
     [SerializeField] MixerController mixerController;
     [SerializeField] OvenController ovenController;
-    [SerializeField] BungeobbangController bungeobbangController;
+    [SerializeField] BungeoppangController bungeoppangController;
     [SerializeField] MainCat catController;
 
     private Camera mainCamera;
@@ -67,17 +67,17 @@ public class DragAndDropItem : MonoBehaviour
                 // �ʸ��� �ؾ�� ���
                 else if (draggableItem.CompareTag("Filling"))
                 {
-                    if (bungeobbangController.bungeobbang1 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang1.gameObject))
+                    if (bungeoppangController.bungeoppang1 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang1.gameObject))
                     {
-                        bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang1.gameObject, draggableItem.gameObject);
+                        bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang1.gameObject, draggableItem.gameObject);
                     }
-                    else if (bungeobbangController.bungeobbang2 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang2.gameObject))
+                    else if (bungeoppangController.bungeoppang2 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang2.gameObject))
                     {
-                        bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang2.gameObject, draggableItem.gameObject);
+                        bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang2.gameObject, draggableItem.gameObject);
                     }
-                    else if (bungeobbangController.bungeobbang3 != null && IsOverlapping(draggableItem.gameObject, bungeobbangController.bungeobbang3.gameObject))
+                    else if (bungeoppangController.bungeoppang3 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang3.gameObject))
                     {
-                        bungeobbangController.FillBungeobbang(bungeobbangController.bungeobbang3.gameObject, draggableItem.gameObject);
+                        bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang3.gameObject, draggableItem.gameObject);
                     }
                 }
                 
