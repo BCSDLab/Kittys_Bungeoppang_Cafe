@@ -7,9 +7,13 @@
     <list default="true" id="2b33751f-1fff-4809-a892-4d69b34c262c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kittys_Bungeoppang_Cafe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kittys_Bungeoppang_Cafe/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/Game_Play_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/Game_Play_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/MainPage_AYJ.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/MainPage_AYJ.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Cat/MainCat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Cat/MainCat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Chat/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Chat/DialogManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Chat/DialogSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Chat/DialogSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/DragAndDropItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/DragAndDropItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/11.Chat/CatText.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/11.Chat/CatText.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/11.Chat/CatText.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/11.Chat/CatText.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/Cat/ComponentsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/Cat/OvenController1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02.Scripts/Chat/CatController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/11.Chat/ExcelImporter/Example/Scripts/Example.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -111,6 +114,8 @@
       <workItem from="1735807298776" duration="3256000" />
       <workItem from="1735810879218" duration="5339000" />
       <workItem from="1735819354757" duration="19000" />
+      <workItem from="1735867872075" duration="2061000" />
+      <workItem from="1735954923165" duration="5773000" />
     </task>
     <servers />
   </component>

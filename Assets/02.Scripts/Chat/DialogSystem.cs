@@ -11,104 +11,102 @@ public class DialogSystem : MonoBehaviour
     private CatText dialogDB;
     [SerializeField]
     private Speaker[] speakers;
-
-    private List<DialogData> dialogs; // 대화 데이터를 리스트로 변경
     [SerializeField]
-    private int branch; // 전달받은 branch 값
+    private GameObject chatUI;
 
+    private List<DialogData> dialogs = new List<DialogData>();
+    private int branch;
     private int currentSpeakerIndex = 0;
     private float typingSpeed = 0.1f;
     private bool isTypingEffect = false;
 
-    public void ReceiveRandomValue(int value)
+    private bool isActive = false;
+
+    public void ReceiveBranchValue(int value)
     {
         branch = value;
-        Debug.Log($"DialogSystem received random value: {branch}");
-        LoadDialogs(); // 랜덤 값을 기반으로 대화 데이터 로드
+        Debug.Log($"Received branch value: {branch}");
+        ProcessDialogs();
     }
 
-    private void LoadDialogs()
+    private void ProcessDialogs()
     {
-        // branch에 따른 대화 데이터 필터링
-        var filteredDialogs = dialogDB.Sheet1.FindAll(d => d.branch == branch);
-        dialogs = new List<DialogData>();
+        dialogs = dialogDB.Sheet1.FindAll(d => d.branch == branch)
+                                 .ConvertAll(d => new DialogData
+                                 {
+                                     name = d.name,
+                                     dialogue = d.dialog,
+                                     speakerIndex = d.speakerIndex
+                                 });
 
-        foreach (var dialog in filteredDialogs)
+        if (dialogs.Count > 0)
         {
-            dialogs.Add(new DialogData
-            {
-                name = dialog.name,
-                dialogue = dialog.dialog,
-                speakerIndex = dialog.speakerIndex
-            });
+            ActivateChatUI();
+            ShowDialog();
         }
-
-        if (dialogs.Count == 0)
+        else
         {
             Debug.LogWarning("No dialogs found for the given branch value.");
         }
     }
 
+    private void ActivateChatUI()
+    {
+        if (chatUI == null)
+        {
+            Debug.LogError("Chat UI GameObject is not assigned.");
+            return;
+        }
+
+        chatUI.SetActive(true);
+        isActive = true;
+    }
+
+    private void DeactivateChatUI()
+    {
+        if (chatUI != null)
+        {
+            chatUI.SetActive(false);
+            isActive = false;
+        }
+    }
+
     public bool UpdateDialog()
     {
-        if (dialogs == null || dialogs.Count == 0)
+        if (!isActive || isTypingEffect) return false;
+
+        if (dialogs.Count > 0)
         {
-            Debug.LogError("Dialog data is not loaded or empty. Call ReceiveRandomValue first.");
-            return false;
+            ShowDialog();
         }
-
-        if (Input.GetMouseButtonDown(0))
+        else
         {
-            if (isTypingEffect)
-            {
-                // 타이핑 중일 때는 입력을 무시
-                return false;
-            }
-
-            // 타이핑이 끝난 후 새로운 랜덤 대화를 표시
-            ShowRandomDialog();
-            return false;
-        }
-
-        // 대화가 모두 끝났다면 true 반환
-        if (dialogs.Count == 0)
-        {
+            DeactivateChatUI();
             Debug.Log("All dialogs have been displayed.");
-            foreach (var speaker in speakers)
-            {
-                SetActiveObjects(speaker, false);
-            }
             return true;
         }
 
         return false;
     }
 
-    private void ShowRandomDialog()
+    private void ShowDialog()
     {
-        if (dialogs.Count == 0)
+        if (dialogs.Count == 0) return;
+
+        var dialog = dialogs[0];
+        dialogs.RemoveAt(0);
+
+        if (dialog.speakerIndex < 0 || dialog.speakerIndex >= speakers.Length)
         {
-            Debug.LogWarning("No dialogs to display.");
+            Debug.LogError($"Speaker index out of bounds: {dialog.speakerIndex}");
             return;
         }
 
-        // 랜덤으로 대화 선택
-        int randomIndex = UnityEngine.Random.Range(0, dialogs.Count);
-        var randomDialog = dialogs[randomIndex];
-
-        // 화자 인덱스 설정 및 검증
-        currentSpeakerIndex = randomDialog.speakerIndex;
-        if (currentSpeakerIndex < 0 || currentSpeakerIndex >= speakers.Length)
-        {
-            Debug.LogError($"Speaker index out of bounds. Current: {currentSpeakerIndex}, Max: {speakers.Length - 1}");
-            return;
-        }
-
+        currentSpeakerIndex = dialog.speakerIndex;
         SetActiveObjects(speakers[currentSpeakerIndex], true);
-        speakers[currentSpeakerIndex].textName.text = randomDialog.name;
+        speakers[currentSpeakerIndex].textName.text = dialog.name;
 
-        // 텍스트 타이핑 효과 시작
-        StartCoroutine(OnTypingText(randomDialog.dialogue));
+        StartCoroutine(OnTypingText(dialog.dialogue));
     }
 
     private void SetActiveObjects(Speaker speaker, bool visible)
@@ -122,13 +120,11 @@ public class DialogSystem : MonoBehaviour
     {
         int index = 0;
         isTypingEffect = true;
-
         speakers[currentSpeakerIndex].textDialogue.text = string.Empty;
 
         while (index < dialogue.Length)
         {
-            speakers[currentSpeakerIndex].textDialogue.text = dialogue.Substring(0, index + 1);
-            index++;
+            speakers[currentSpeakerIndex].textDialogue.text = dialogue.Substring(0, ++index);
             yield return new WaitForSeconds(typingSpeed);
         }
 

@@ -28,27 +28,23 @@ public class MainCat : MonoBehaviour
 
     [Header("Branch Configuration")]
     [SerializeField] private int branch;
-    [SerializeField] private string triggerTag = "Bungeobbang";
+
+    [Header("Dialog Manager")]
+    [SerializeField] private DialogManager dialogManager; // DialogManager 참조 추가
 
     public ResponseEvent OnEventProcessed;
 
     private EventData currentEventData;
     private State currentState = State.Start;
+    private bool give = false;
+    private bool text = true;
 
-    private bool isOverlapping = false; // 충돌 상태 확인 변수
-    private GameObject overlappingObject; // 충돌 중인 오브젝트
 
     private enum State
     {
         Start,
         Intermediate,
         Final
-    }
-
-    public void ReceiveDividedValue(int value)
-    {
-        branch = value;
-        Debug.Log($"MainCat received divided value: {branch}");
     }
 
     private void Start()
@@ -59,6 +55,71 @@ public class MainCat : MonoBehaviour
             OnEventProcessed = new ResponseEvent();
 
         HandleBranchLogic();
+    }
+    
+    public void ReceiveDividedValue(int value)
+    {
+        branch = value;
+        Debug.Log($"MainCat received divided value: {branch}");
+    }
+    
+    public bool IsAtIntermediatePosition()
+    {
+        if (text == true)
+        {
+            return currentState == State.Intermediate && 
+                   Vector3.Distance(transform.position, intermediatePoint.position) < 0.01f;
+        }
+        text = false; 
+        return false;
+    }
+
+    public void ReceiveBungeobbangData(ComponentsSO bungeobbangComponent)
+    {
+        Debug.Log($"붕어빵 정보 수신: {bungeobbangComponent.componentName}");
+
+        int receivedValue = MapIngredientToValue(bungeobbangComponent.componentName);
+
+        if (receivedValue != -1)
+        {
+            if (dialogManager != null)
+            {
+                int dialogValue = (branch % 5) + 1; // DialogManager에서 기대값을 가져옴
+
+                if (receivedValue == dialogValue)
+                {
+                    Debug.Log("Received value matches DialogManager's expected value: True");
+                    give = true;
+                }
+                else
+                {
+                    Debug.Log("Received value does not match DialogManager's expected value: False");
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Received an invalid ingredient name.");
+        }
+    }
+
+    private int MapIngredientToValue(string ingredientName)
+    {
+        switch (ingredientName)
+        {
+            case "Avocado":
+                return 1;
+            case "Chocolate":
+                return 2;
+            case "Milk":
+                return 3;
+            case "Peach":
+                return 4;
+            case "Red_Pepper":
+                return 5;
+            default:
+                return -1; // Invalid ingredient
+        }
     }
 
     private void HandleBranchLogic()
@@ -109,23 +170,27 @@ public class MainCat : MonoBehaviour
             currentState = State.Intermediate;
         }
 
-        // 마우스 우클릭으로 최종 위치로 이동
-        if (Input.GetMouseButtonDown(0) && currentState == State.Intermediate)
+        // 중간 위치에서 DialogManager에 값 전달
+        if (currentState == State.Intermediate && give == true)
         {
-            StartCoroutine(SlideSequence(currentEventData.finalPosition.position));
-            currentState = State.Final;
-            isOverlapping = false; // 상태 초기화
+            if (dialogManager != null)
+            {
+                Debug.Log("Cat reached intermediate position. Notifying DialogManager.");
+                
+            }
+
+            give = false;
+            currentState = State.Final; // 다음 상태로 전환
         }
 
-        // 최종 위치에 도달한 경우 x 위치를 -5로 변경
-        if (currentState == State.Final && Vector3.Distance(transform.position, finalPoint.position) < 0.01f)
+        if (Input.GetMouseButtonDown(0) && currentState == State.Final)
         {
-            transform.position = new Vector3(-5f, transform.position.y, transform.position.z); // x 위치를 -5로 변경
-            currentState = State.Start; // 상태 초기화
-            Debug.Log("X position set to -5 and state reset to Start.");
+            text = true;
+            dialogManager.ReceiveValueFromMainCat(branch); // DialogManager로 값 전달
+            StartCoroutine(SlideSequence(currentEventData.finalPosition.position));
         }
     }
-    
+
     private IEnumerator SlideSequence(Vector3 targetPosition)
     {
         Vector3 startPosition = transform.position;
@@ -145,43 +210,5 @@ public class MainCat : MonoBehaviour
         }
 
         transform.position = targetPosition;
-    }
-
-    public void SetIsOverlapping(bool value, GameObject otherObject = null)
-    {
-        isOverlapping = value;
-        overlappingObject = value ? otherObject : null;
-
-        if (value && otherObject != null)
-        {
-            Debug.Log($"Overlapping started with: {otherObject.name}");
-        }
-        else
-        {
-            Debug.Log("Overlapping stopped.");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag(triggerTag))
-        {
-            SetIsOverlapping(true, other.gameObject);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag(triggerTag))
-        {
-            SetIsOverlapping(false);
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        // 마우스 클릭으로 isOverlapping 변경
-        SetIsOverlapping(true, gameObject);
-        Debug.Log($"Object {name} clicked. isOverlapping set to true.");
     }
 }
