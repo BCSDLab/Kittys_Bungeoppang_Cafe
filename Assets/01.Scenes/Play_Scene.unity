@@ -1272,7 +1272,6 @@ GameObject:
   - component: {fileID: 301888220}
   - component: {fileID: 301888223}
   - component: {fileID: 301888222}
-  - component: {fileID: 301888221}
   m_Layer: 5
   m_Name: Text_Guide
   m_TagString: Untagged
@@ -1299,30 +1298,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 364}
   m_SizeDelta: {x: 784, y: 728}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &301888221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301888219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3154464ed6345ac48b52c42b1f302b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fullText: "[\uBE48 \uBD95\uC5B4\uBE75 \uB9CC\uB4DC\uB294 \uBC95]\n1. \uBC00\uAC00\uB8E8\uB97C
-    \uC624\uBE10\uC73C\uB85C \uB4DC\uB798\uADF8\uD55C\uB2E4.\n2. 7\uCD08\uB97C \uAE30\uB2E4\uB9B0\uB2E4.\n3.
-    \uBE48 \uBD95\uC5B4\uBE75\uC774 \uB3C4\uB9C8 \uC704\uC5D0 \uB9CC\uB4E4\uC5B4\uC9C4\uB2E4.\n\n[\uBD95\uC5B4\uBE75
-    \uC18D \uB9CC\uB4DC\uB294 \uBC95]\n1. \uC7AC\uB8CC\uB97C \uBBF9\uC11C\uAE30\uB85C
-    \uB4DC\uB798\uADF8\uD55C\uB2E4.\n2. 5\uCD08\uB97C \uAE30\uB2E4\uB9B0\uB2E4.\n3.
-    \uBD95\uC5B4\uBE75 \uC18D\uC774 \uBBF9\uC11C\uAE30 \uC8FC\uBCC0\uC5D0  \uB9CC\uB4E4\uC5B4\uC9C4\uB2E4.\n\n[\uD2B9\uBCC4\uD55C
-    \uBD95\uC5B4\uBE75 \uB9CC\uB4DC\uB294 \uBC95]\n1. \uBD95\uC5B4\uBE75 \uC18D\uC744
-    \uBE48 \uBD95\uC5B4\uBE75\uC73C\uB85C \uB4DC\uB798\uADF8\uD55C\uB2E4.\n2. \uD2B9\uBCC4\uD55C
-    \uBD95\uC5B4\uBE75\uC774 \uB9CC\uB4E4\uC5B4\uC9C4\uB2E4."
-  typingDelay: 0.015
-  uiTMPText: {fileID: 0}
-  uiText: {fileID: 301888222}
 --- !u!114 &301888222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8881,7 +8856,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: 
 --- !u!222 &1892662545
 CanvasRenderer:
