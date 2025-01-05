@@ -10,7 +10,6 @@ public class GameControl : MonoBehaviour
         if (isFirst)
         {
             guidePanel.SetActive(true);
-            Time.timeScale = 0;
             isFirst = false;
         }
     }

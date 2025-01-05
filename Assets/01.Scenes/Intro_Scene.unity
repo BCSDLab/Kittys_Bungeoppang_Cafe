@@ -1417,6 +1417,7 @@ GameObject:
   - component: {fileID: 1623093527}
   - component: {fileID: 1623093529}
   - component: {fileID: 1623093528}
+  - component: {fileID: 1623093530}
   m_Layer: 5
   m_Name: Title_Text
   m_TagString: Untagged
@@ -1463,7 +1464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB0E5\uC774\uB124\n\uBD95\uC5B4\uBE75 \uAC00\uAC8C"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4812c5483f68e43e5b7288df3566fc09, type: 2}
   m_sharedMaterial: {fileID: 2250327152978065443, guid: 4812c5483f68e43e5b7288df3566fc09, type: 2}
@@ -1542,6 +1543,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623093526}
   m_CullTransparentMesh: 1
+--- !u!114 &1623093530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623093526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3154464ed6345ac48b52c42b1f302b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullText: "\uB0E5\uC774\uB124\n\uBD95\uC5B4\uBE75 \uAC00\uAC8C"
+  typingSpeed: 0.05
+  uiText: {fileID: 1623093528}
 --- !u!1 &1669892784
 GameObject:
   m_ObjectHideFlags: 0

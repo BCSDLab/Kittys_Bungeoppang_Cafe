@@ -11,9 +11,19 @@ public class TimeController : MonoBehaviour
     [SerializeField] private float gamePlayTime = 300;
     private float currentTime = 0;
 
+    public bool isGameStart = false;
+
     void Update()
     {
-        Timer();
+        if (isGameStart)
+        {
+            Timer();
+        }
+    }
+
+    public void GameStart()
+    {
+        isGameStart = true;
     }
 
     void Timer()
