@@ -1556,8 +1556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullText: "\uB0E5\uC774\uB124\n\uBD95\uC5B4\uBE75 \uAC00\uAC8C"
-  typingSpeed: 0.05
-  uiText: {fileID: 1623093528}
+  typingDelay: 0.15
+  uiTMPText: {fileID: 1623093528}
+  uiText: {fileID: 0}
 --- !u!1 &1669892784
 GameObject:
   m_ObjectHideFlags: 0
