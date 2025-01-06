@@ -8,6 +8,7 @@ public class DragAndDropItem : MonoBehaviour
     [SerializeField] OvenController ovenController;
     [SerializeField] BungeoppangController bungeoppangController;
     [SerializeField] MainCat catController;
+    [SerializeField] TrashCanController trashCanController;
 
     [SerializeField] Camera frontCamera;
     private Camera mainCamera;
@@ -66,6 +67,7 @@ public class DragAndDropItem : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
+
             // 원래 레이어로 바꾸기
             draggableItem.EndDragging(originalLayerIndex);
 
@@ -110,6 +112,17 @@ public class DragAndDropItem : MonoBehaviour
             else if (bungeoppangController.bungeoppang3 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang3.gameObject))
             {
                 bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang3.gameObject, draggableItem.gameObject);
+            }
+        }
+
+        // 쓰레기통에 버리기
+        if (trashCanController != null && IsOverlapping(draggableItem.gameObject, trashCanController.gameObject))
+        {
+
+            if (draggableItem.CompareTag("Filling") || draggableItem.CompareTag("Bungeobbang") || draggableItem.CompareTag("Empty_Bungeobbang"))
+            {
+                Destroy(draggableItem.gameObject);
+                Debug.Log("쓰레기통에 버렸습니다.");
             }
         }
 

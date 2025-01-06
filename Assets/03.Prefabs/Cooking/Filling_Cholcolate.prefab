@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientData: {fileID: 0}
   isDrag: 0
+  frontCamera: {fileID: 0}
 --- !u!60 &-5999940367562495091
 PolygonCollider2D:
   m_ObjectHideFlags: 0
