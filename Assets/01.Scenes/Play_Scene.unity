@@ -11305,7 +11305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gauge: {fileID: 936923202}
-  gamePlayTime: 100
+  gamePlayTime: 180
   resourceManager: {fileID: 1230346492}
   isGameStart: 0
 --- !u!4 &1926039777
