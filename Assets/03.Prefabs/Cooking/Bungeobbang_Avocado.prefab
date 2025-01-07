@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6486239746124911941}
   - component: {fileID: 902717716775491099}
   - component: {fileID: -5250183492392718973}
+  - component: {fileID: 3528736732555612756}
   m_Layer: 0
   m_Name: Bungeobbang_Avocado
   m_TagString: Bungeobbang
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1987767669
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 854432398793121809, guid: 12dd8d7b980ffdd4b816fcd3db3a9084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientData: {fileID: 0}
   isDrag: 0
+  frontCamera: {fileID: 0}
 --- !u!60 &-5250183492392718973
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -187,3 +189,22 @@ PolygonCollider2D:
       - {x: 0.39499998, y: -0.995}
       - {x: 0.33499998, y: -0.895}
   m_UseDelaunayMesh: 0
+--- !u!114 &3528736732555612756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645270711381120924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d536ec14d2ed5e419425cc3f761fbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentData: {fileID: 11400000, guid: 4954589639d9260429eea0c006361ee4, type: 2}
+  componentName: Avocado
+  componentPrefab: {fileID: 0}
+  type: 
+  outputName: 
+  outputPrefab: {fileID: 0}
+  Bungeobbang: {fileID: 0}

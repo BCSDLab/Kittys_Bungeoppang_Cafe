@@ -20,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
+  - DraggedItem
   - 
   - Cat
-  - 
   - 
   - 
   - 
@@ -64,6 +64,9 @@ TagManager:
     locked: 0
   - name: Drag Item
     uniqueID: 4074986783
+    locked: 0
+  - name: UI
+    uniqueID: 1650933199
     locked: 0
   m_RenderingLayers:
   - Default

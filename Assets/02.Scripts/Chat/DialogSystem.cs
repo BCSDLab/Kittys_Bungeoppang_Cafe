@@ -22,15 +22,38 @@ public class DialogSystem : MonoBehaviour
 
     private bool isActive = false;
 
+    public float Endcount = 1f;
+    public float Startcount = 1f;
+
     public void ReceiveBranchValue(int value)
     {
         branch = value;
-        Debug.Log($"Received branch value: {branch}");
+        Debug.Log($"받은 branch 값: {branch}");
+
+        if (branch == 151 || branch == 152)
+        {
+            Debug.Log("즉시 대화를 시작합니다.");
+            ProcessDialogs();
+            Debug.Log("1초 후 채팅 UI를 비활성화할 예정...");
+            StartCoroutine(DeactivateChatWithDelay(Endcount));
+        }
+        else
+        {
+            Debug.Log("3초 후 대화를 시작합니다.");
+            StartCoroutine(StartDialogAfterDelay(Startcount));
+        }
+    }
+
+    private IEnumerator StartDialogAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         ProcessDialogs();
     }
 
+
     private void ProcessDialogs()
     {
+        Debug.Log($"branch 값 {branch}에 대한 대사를 처리 중...");
         dialogs = dialogDB.Sheet1.FindAll(d => d.branch == branch)
                                  .ConvertAll(d => new DialogData
                                  {
@@ -46,7 +69,7 @@ public class DialogSystem : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No dialogs found for the given branch value.");
+            Debug.LogWarning($"branch 값 {branch}에 해당하는 대사가 없습니다.");
         }
     }
 
@@ -54,7 +77,7 @@ public class DialogSystem : MonoBehaviour
     {
         if (chatUI == null)
         {
-            Debug.LogError("Chat UI GameObject is not assigned.");
+            Debug.LogError("Chat UI GameObject가 할당되지 않았습니다.");
             return;
         }
 
@@ -68,6 +91,11 @@ public class DialogSystem : MonoBehaviour
         {
             chatUI.SetActive(false);
             isActive = false;
+            Debug.Log("채팅 UI가 성공적으로 비활성화되었습니다.");
+        }
+        else
+        {
+            Debug.LogError("chatUI가 할당되지 않았습니다.");
         }
     }
 
@@ -81,8 +109,7 @@ public class DialogSystem : MonoBehaviour
         }
         else
         {
-            DeactivateChatUI();
-            Debug.Log("All dialogs have been displayed.");
+            Debug.Log("모든 대사를 표시했습니다.");
             return true;
         }
 
@@ -98,7 +125,7 @@ public class DialogSystem : MonoBehaviour
 
         if (dialog.speakerIndex < 0 || dialog.speakerIndex >= speakers.Length)
         {
-            Debug.LogError($"Speaker index out of bounds: {dialog.speakerIndex}");
+            Debug.LogError($"Speaker index 범위 초과: {dialog.speakerIndex}");
             return;
         }
 
@@ -129,6 +156,13 @@ public class DialogSystem : MonoBehaviour
         }
 
         isTypingEffect = false;
+    }
+
+    private IEnumerator DeactivateChatWithDelay(float delay)
+    {
+        Debug.Log($"{delay}초 후 채팅 UI를 비활성화합니다...");
+        yield return new WaitForSeconds(delay);
+        DeactivateChatUI();
     }
 }
 

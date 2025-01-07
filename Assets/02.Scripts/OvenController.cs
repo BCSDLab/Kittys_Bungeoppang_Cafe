@@ -5,12 +5,11 @@ public class OvenController : MonoBehaviour, ICookingTools
 {
     [SerializeField] public float cookingTime = 7f;
     [SerializeField] OvenTimeBar ovenTimeBar;
-    [SerializeField] BungeobbangController bungeobbangController;
+    [SerializeField] BungeoppangController bungeoppangController;
 
     public ComponentsManager componentsManager;
     private ComponentsSO currentDough;
 
-    
 
     // 믹서기에 재료 넣기
     public void CheckComponent(GameObject dough)
@@ -36,7 +35,7 @@ public class OvenController : MonoBehaviour, ICookingTools
     {
         Debug.Log("반죽을 굽는 중입니다...");
         yield return new WaitForSeconds(cookingTime);
-        bungeobbangController.CreateOutput();
+        bungeoppangController.CreateBungeobbang();
         currentDough = null;
     }
 
