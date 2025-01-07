@@ -11305,7 +11305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gauge: {fileID: 936923202}
-  gamePlayTime: 100
+  gamePlayTime: 180
   resourceManager: {fileID: 1230346492}
   isGameStart: 0
 --- !u!4 &1926039777
@@ -12037,7 +12037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464749768799118150, guid: d71d0e7222eea49609952d1a7c6403ef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3464749768799118150, guid: d71d0e7222eea49609952d1a7c6403ef, type: 3}
       propertyPath: m_TagString

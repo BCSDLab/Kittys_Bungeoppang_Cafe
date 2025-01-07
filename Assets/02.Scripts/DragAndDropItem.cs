@@ -119,10 +119,11 @@ public class DragAndDropItem : MonoBehaviour
         
         if (draggableItem.CompareTag("Bungeobbang"))
         {
-            if(IsOverlapping(draggableItem.gameObject, bound))
+            if (IsOverlapping(draggableItem.gameObject, bound))
             {
                 catController.CheckComponent(draggableItem.gameObject);
                 Destroy(draggableItem.gameObject);
+                
             }
         }
         

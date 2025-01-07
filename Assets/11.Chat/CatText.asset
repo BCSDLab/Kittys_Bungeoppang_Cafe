@@ -438,15 +438,18 @@ MonoBehaviour:
     speakerIndex: 0
   - branch: 88
     name: "\uB3C4\uB451\uB0E5\uC774"
-    dialog: "\uFEFF\uB3C4\uC804\uC801\uC778 \uB9DB\uC758 \uBD95\uC5B4\uBE75 \uC788\uB098\uC694?"
+    dialog: "\uFEFF\uACE0\uCD94 \uBD95\uC5B4\uBE75\uC740 \uB9E4\uCF64\uD574\uC11C
+      \uC88B\uC544\uC694."
     speakerIndex: 0
   - branch: 89
     name: "\uB3C4\uB451\uB0E5\uC774"
-    dialog: "\uFEFF\uB3C4\uC804\uC801\uC778 \uB9DB\uC758 \uBD95\uC5B4\uBE75 \uC788\uB098\uC694?"
+    dialog: "\uFEFF\uACE0\uCD94 \uBD95\uC5B4\uBE75\uC740 \uB9E4\uCF64\uD574\uC11C
+      \uC88B\uC544\uC694."
     speakerIndex: 0
   - branch: 90
     name: "\uB3C4\uB451\uB0E5\uC774"
-    dialog: "\uFEFF\uB3C4\uC804\uC801\uC778 \uB9DB\uC758 \uBD95\uC5B4\uBE75 \uC788\uB098\uC694?"
+    dialog: "\uFEFF\uACE0\uCD94 \uBD95\uC5B4\uBE75\uC740 \uB9E4\uCF64\uD574\uC11C
+      \uC88B\uC544\uC694."
     speakerIndex: 0
   - branch: 91
     name: "\uC0BC\uC0C9\uB0E5\uC774"
@@ -766,5 +769,6 @@ MonoBehaviour:
     speakerIndex: 0
   - branch: 152
     name: "\uC2E4\uD328"
-    dialog: "\uC81C\uAC00 \uC6D0\uD55C \uBD95\uC5B4\uBE75\uC740 \uC774\uAC8C \uC544\uB2CC\uB370.."
+    dialog: "\uFEFF\uACE0\uCD94 \uBD95\uC5B4\uBE75\uC740 \uB9E4\uCF64\uD574\uC11C
+      \uC88B\uC544\uC694."
     speakerIndex: 0
