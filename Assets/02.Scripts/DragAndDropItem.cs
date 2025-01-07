@@ -103,15 +103,15 @@ public class DragAndDropItem : MonoBehaviour
         {
             if (bungeoppangController.bungeoppang1 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang1.gameObject))
             {
-                bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang1.gameObject, draggableItem.gameObject);
+                bungeoppangController.FillBungeoppang(bungeoppangController.bungeoppang1.gameObject, draggableItem.gameObject);
             }
             else if (bungeoppangController.bungeoppang2 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang2.gameObject))
             {
-                bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang2.gameObject, draggableItem.gameObject);
+                bungeoppangController.FillBungeoppang(bungeoppangController.bungeoppang2.gameObject, draggableItem.gameObject);
             }
             else if (bungeoppangController.bungeoppang3 != null && IsOverlapping(draggableItem.gameObject, bungeoppangController.bungeoppang3.gameObject))
             {
-                bungeoppangController.FillBungeobbang(bungeoppangController.bungeoppang3.gameObject, draggableItem.gameObject);
+                bungeoppangController.FillBungeoppang(bungeoppangController.bungeoppang3.gameObject, draggableItem.gameObject);
             }
         }
 
@@ -124,15 +124,36 @@ public class DragAndDropItem : MonoBehaviour
         // 쓰레기통에 버리기
         if (trashCanController != null && IsOverlapping(draggableItem.gameObject, trashCanController.gameObject))
         {
-
-            if (draggableItem.CompareTag("Filling") || draggableItem.CompareTag("Bungeobbang") || draggableItem.CompareTag("Empty_Bungeobbang"))
+            if (draggableItem.CompareTag("Filling") || draggableItem.CompareTag("Bungeobbang"))
             {
                 Destroy(draggableItem.gameObject);
                 Debug.Log("쓰레기통에 버렸습니다.");
             }
+            else if (draggableItem.CompareTag("Empty_Bungeobbang"))
+            {
+                if (draggableItem.gameObject == bungeoppangController.bungeoppang1)
+                {
+                    Debug.Log("쓰레기통에 bungeoppang1.");
+                    bungeoppangController.bungeoppang1.SetActive(false);
+                    bungeoppangController.isBungeoppang1Visible = false;
+                    bungeoppangController.isBungeoppang1Special = false;
+                }
+                else if (draggableItem.gameObject == bungeoppangController.bungeoppang2)
+                {
+                    Debug.Log("쓰레기통에 bungeoppang2.");
+                    bungeoppangController.bungeoppang2.SetActive(false);
+                    bungeoppangController.isBungeoppang2Visible = false;
+                    bungeoppangController.isBungeoppang2Special = false;
+                }
+                else if (draggableItem.gameObject == bungeoppangController.bungeoppang3)
+                {
+                    Debug.Log("쓰레기통에 bungeoppang3.");
+                    bungeoppangController.bungeoppang3.SetActive(false);
+                    bungeoppangController.isBungeoppang3Visible = false;
+                    bungeoppangController.isBungeoppang2Special = false;
+                }
+            }
         }
-
-        
     }
 
     // 닿아 있는지 확인하기

@@ -19,7 +19,7 @@ public class BungeoppangController : MonoBehaviour
     public bool isBungeoppang3Special = false;
 
     // ���� ���� �ؾ�� �����
-    public void CreateBungeobbang()
+    public void CreateBungeoppang()
     {
         // �� ���̴� �ؾ ���̰� �ϱ�
         if (isBungeoppang1Visible == false && isBungeoppang1Special == false)
@@ -40,7 +40,7 @@ public class BungeoppangController : MonoBehaviour
     }
 
     // �ؾ�� �ʸ� ä���
-    public void FillBungeobbang(GameObject emptyBungeobbang, GameObject filling)
+    public void FillBungeoppang(GameObject emptyBungeobbang, GameObject filling)
     {
         Components component = filling.GetComponent<Components>();
         currentBungeobbang = component.componentData;
@@ -50,20 +50,20 @@ public class BungeoppangController : MonoBehaviour
         // �� �ؾ�� ������ Ư���� �ؾ���� �����
         if (emptyBungeobbang == bungeoppang1 && isBungeoppang1Visible == true && isBungeoppang1Special == false)
         {
-            MakeSpecialBungeobbang(emptyBungeobbang.transform.position, 1, filling);
+            MakeSpecialBungeoppang(emptyBungeobbang.transform.position, 1, filling);
         }
         else if (emptyBungeobbang == bungeoppang2 && isBungeoppang2Visible == true && isBungeoppang2Special == false)
         {
-            MakeSpecialBungeobbang(emptyBungeobbang.transform.position, 2, filling);
+            MakeSpecialBungeoppang(emptyBungeobbang.transform.position, 2, filling);
         }
         else if (emptyBungeobbang == bungeoppang3 && isBungeoppang3Visible == true && isBungeoppang3Special == false)
         {
-            MakeSpecialBungeobbang(emptyBungeobbang.transform.position, 3, filling);
+            MakeSpecialBungeoppang(emptyBungeobbang.transform.position, 3, filling);
         }
     }
 
     // Ư���� �ؾ �����
-    void MakeSpecialBungeobbang(Vector3 bungeobbangPos, int bungeobbangIndex, GameObject filling)
+    void MakeSpecialBungeoppang(Vector3 bungeobbangPos, int bungeobbangIndex, GameObject filling)
     {
         GameObject output = Instantiate(
         currentBungeobbang.Bungeobbang,

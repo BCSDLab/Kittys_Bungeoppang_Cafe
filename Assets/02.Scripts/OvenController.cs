@@ -35,7 +35,7 @@ public class OvenController : MonoBehaviour, ICookingTools
     {
         Debug.Log("¹ÝÁ×À» ±Á´Â ÁßÀÔ´Ï´Ù...");
         yield return new WaitForSeconds(cookingTime);
-        bungeoppangController.CreateBungeobbang();
+        bungeoppangController.CreateBungeoppang();
         currentDough = null;
     }
 
