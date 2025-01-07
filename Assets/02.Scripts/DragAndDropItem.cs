@@ -122,6 +122,19 @@ public class DragAndDropItem : MonoBehaviour
             if(IsOverlapping(draggableItem.gameObject, bound))
             {
                 catController.CheckComponent(draggableItem.gameObject);
+
+                SpecialBungeoppang special = draggableItem.GetComponent<SpecialBungeoppang>();
+                if (special != null)
+                {
+                    int index = special.bungeoppangIndex;
+                    
+                    if (index == 1) bungeoppangController.isBungeoppang1Special = false;
+                    else if (index == 2) bungeoppangController.isBungeoppang2Special = false;
+                    else if (index == 3) bungeoppangController.isBungeoppang3Special = false;
+
+                    catController.CheckComponent(draggableItem.gameObject);
+                }
+
                 Destroy(draggableItem.gameObject);
             }
         }
