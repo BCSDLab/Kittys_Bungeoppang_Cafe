@@ -71,6 +71,13 @@ public class BungeoppangController : MonoBehaviour
         Quaternion.identity
         );
 
+        // 인덱스 주입
+        SpecialBungeoppang special = output.GetComponent<SpecialBungeoppang>();
+        if (special != null)
+        {
+            special.bungeoppangIndex = bungeobbangIndex;
+        }
+
         if (bungeobbangIndex == 1)
         {
             isBungeoppang1Visible = false;

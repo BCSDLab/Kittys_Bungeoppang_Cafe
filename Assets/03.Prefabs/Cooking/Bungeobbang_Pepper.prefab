@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7844895744577096387}
   - component: {fileID: 3945768751340621150}
   - component: {fileID: 6217982561038535296}
+  - component: {fileID: -3546870208711045085}
   m_Layer: 0
   m_Name: Bungeobbang_Pepper
   m_TagString: Bungeobbang
@@ -208,3 +209,16 @@ MonoBehaviour:
   outputName: 
   outputPrefab: {fileID: 0}
   Bungeobbang: {fileID: 0}
+--- !u!114 &-3546870208711045085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444256272190773289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768e34ca16118e340b6487377a1ee755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bungeoppangIndex: 0
