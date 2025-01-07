@@ -27,6 +27,9 @@ public class DialogSystem : MonoBehaviour
 
     public GameObject cat;
 
+    private int lastBranch = -1; // 마지막으로 처리된 branch 값
+    private List<DialogData> lastDialogs = new List<DialogData>(); // 마지막 대사 리스트
+
     public void ReceiveBranchValue(int value)
     {
         branch = value;
@@ -36,12 +39,10 @@ public class DialogSystem : MonoBehaviour
         {
             Debug.Log("즉시 대화를 시작합니다.");
             ProcessDialogs();
-            Debug.Log("1초 후 채팅 UI를 비활성화할 예정...");
             StartCoroutine(DeactivateChatWithDelay(Endcount));
         }
         else
         {
-            Debug.Log("3초 후 대화를 시작합니다.");
             StartCoroutine(StartDialogAfterDelay(Startcount));
         }
     }
@@ -52,26 +53,37 @@ public class DialogSystem : MonoBehaviour
         ProcessDialogs();
     }
 
-
     private void ProcessDialogs()
     {
-        Debug.Log($"branch 값 {branch}에 대한 대사를 처리 중...");
-        dialogs = dialogDB.Sheet1.FindAll(d => d.branch == branch)
-                                 .ConvertAll(d => new DialogData
-                                 {
-                                     name = d.name,
-                                     dialogue = d.dialog,
-                                     speakerIndex = d.speakerIndex
-                                 });
+        var newDialogs = dialogDB.Sheet1.FindAll(d => d.branch == branch)
+                                        .ConvertAll(d => new DialogData
+                                        {
+                                            name = d.name,
+                                            dialogue = d.dialog,
+                                            speakerIndex = d.speakerIndex
+                                        });
 
-        if (dialogs.Count > 0)
+        if (newDialogs.Count > 0)
         {
+            dialogs = newDialogs;
+            lastBranch = branch; // 현재 branch 값을 저장
+            lastDialogs = new List<DialogData>(dialogs); // 현재 대사를 저장
             ActivateChatUI();
             ShowDialog();
         }
         else
         {
-            Debug.LogWarning($"branch 값 {branch}에 해당하는 대사가 없습니다.");
+            if (lastBranch != -1 && lastDialogs.Count > 0)
+            {
+                Debug.LogWarning($"branch 값 {branch}에 해당하는 대사가 없습니다. 이전 대사를 사용합니다.");
+                dialogs = new List<DialogData>(lastDialogs); // 이전 대사 복사
+                ActivateChatUI();
+                ShowDialog();
+            }
+            else
+            {
+                Debug.LogError($"branch 값 {branch}에 해당하는 대사가 없으며 이전 대사도 없습니다.");
+            }
         }
     }
 
@@ -172,6 +184,7 @@ public class DialogSystem : MonoBehaviour
         DeactivateChatUI();
     }
 }
+
 
 [System.Serializable]
 public struct Speaker

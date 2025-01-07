@@ -116,7 +116,8 @@ public class DragAndDropItem : MonoBehaviour
             }
         }
 
-        else if (draggableItem.CompareTag("Bungeobbang"))
+        
+        if (draggableItem.CompareTag("Bungeobbang"))
         {
             if(!IsOverlapping(draggableItem.gameObject, bound))
             {
