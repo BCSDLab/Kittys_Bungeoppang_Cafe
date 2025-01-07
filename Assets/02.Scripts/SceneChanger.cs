@@ -18,15 +18,14 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("Ending_Best_Scene");
     }
 
-    /*
+    
     public void ChangeToNormalEndingScene()
     {
-
+        SceneManager.LoadScene("Ending_Normal_Scene");
     }
 
     public void ChangeToBadEndingScene()
     {
-
+        SceneManager.LoadScene("Ending_Bad_Scene");
     }
-    */
 }

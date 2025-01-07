@@ -7,8 +7,8 @@ public class ResourceManager : MonoBehaviour
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI fameText;
     
-    private int coinValue = 0;
-    private int fameValue = 0;
+    public int coinValue = 0;
+    public int fameValue = 0;
 
     [SerializeField] bool isTrue = false;
 
@@ -21,13 +21,13 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    void AddCoin(int coinAmount)
+    public void AddCoin(int coinAmount)
     {
         coinValue += coinAmount;
         UpdateCoinText();
     }
 
-    void AddFame(int fameAmount)
+    public void AddFame(int fameAmount)
     {
         fameValue += fameAmount;
         UpdateFameText();

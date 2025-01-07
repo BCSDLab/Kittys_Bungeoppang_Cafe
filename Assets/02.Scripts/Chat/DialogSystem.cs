@@ -25,6 +25,8 @@ public class DialogSystem : MonoBehaviour
     public float Endcount = 1f;
     public float Startcount = 1f;
 
+    public GameObject cat;
+
     public void ReceiveBranchValue(int value)
     {
         branch = value;
@@ -83,6 +85,11 @@ public class DialogSystem : MonoBehaviour
 
         chatUI.SetActive(true);
         isActive = true;
+    }
+
+    public void Gamestart()
+    {
+        cat.SetActive(true);
     }
 
     private void DeactivateChatUI()

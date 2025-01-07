@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3136509915311706454}
   - component: {fileID: -4733961205159697186}
   - component: {fileID: 2345317896514891165}
+  - component: {fileID: -2872001278722006819}
   m_Layer: 0
   m_Name: Bungeobbang_Milk
   m_TagString: Bungeobbang
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1987767669
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 3914503701232981894, guid: c75c918d865b2f7429c04b99a38cb2ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -187,3 +188,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientData: {fileID: 0}
   isDrag: 0
+  frontCamera: {fileID: 0}
+--- !u!114 &-2872001278722006819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424323399145106170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d536ec14d2ed5e419425cc3f761fbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentData: {fileID: 11400000, guid: f0ca0447fece57547876ebd86ae4d7c7, type: 2}
+  componentName: Milk
+  componentPrefab: {fileID: 0}
+  type: 
+  outputName: 
+  outputPrefab: {fileID: 0}
+  Bungeobbang: {fileID: 0}

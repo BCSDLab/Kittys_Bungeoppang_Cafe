@@ -320,8 +320,7 @@ MonoBehaviour:
     speakerIndex: 0
   - branch: 63
     name: "\uB3C4\uB451\uB0E5\uC774"
-    dialog: "\uFEFF\uC5B4? \uC800\uAE30 \uBB50\uAC00 \uB5A8\uC5B4\uC84C\uB124\uC694?
-      (\uC8FC\uC758\uB97C \uB3CC\uB9BC)"
+    dialog: "\uFEFF\uC5B4? \uC800\uAE30 \uBB50\uAC00 \uB5A8\uC5B4\uC84C\uB124\uC694? "
     speakerIndex: 0
   - branch: 64
     name: "\uB3C4\uB451\uB0E5\uC774"

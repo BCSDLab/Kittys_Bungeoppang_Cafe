@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6867374813058307249}
   - component: {fileID: -8882821774454406246}
   - component: {fileID: -2601694211505241758}
+  - component: {fileID: -55694163817434314}
   m_Layer: 0
   m_Name: Bungeobbang_Empty
   m_TagString: Empty_Bungeobbang
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1987767669
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -828527482281258920, guid: ac90ee59a69b7f647a3227d114dbf276, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientData: {fileID: 0}
   isDrag: 0
+  frontCamera: {fileID: 0}
 --- !u!60 &-2601694211505241758
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -184,3 +186,22 @@ PolygonCollider2D:
       - {x: -0.04, y: -0.65}
       - {x: 0.22999999, y: -0.55}
   m_UseDelaunayMesh: 0
+--- !u!114 &-55694163817434314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548163355721780532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d536ec14d2ed5e419425cc3f761fbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentData: {fileID: 0}
+  componentName: 
+  componentPrefab: {fileID: 0}
+  type: 
+  outputName: 
+  outputPrefab: {fileID: 0}
+  Bungeobbang: {fileID: 0}

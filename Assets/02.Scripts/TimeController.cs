@@ -9,6 +9,9 @@ public class TimeController : MonoBehaviour
     [SerializeField] private Image gauge;
 
     [SerializeField] private float gamePlayTime = 300;
+    
+    [SerializeField] private ResourceManager resourceManager;
+    
     private float currentTime = 0;
 
     public bool isGameStart = false;
@@ -34,7 +37,19 @@ public class TimeController : MonoBehaviour
         if (currentTime >= gamePlayTime)
         {
             currentTime = 0;
-            ChangetoEndingScene();
+            if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 100)
+            {
+                SceneManager.LoadScene("Ending_Best_Scene");
+            }else if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 0)
+            {
+                SceneManager.LoadScene("Ending_Coin_Scene");
+            }else if (resourceManager.coinValue > 0 && resourceManager.fameValue > 100)
+            {
+                SceneManager.LoadScene("Ending_Fame_Scene");
+            }else 
+            {
+                SceneManager.LoadScene("Ending_Bad_Scene");
+            }
         }
     }
 

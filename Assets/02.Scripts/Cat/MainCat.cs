@@ -36,9 +36,10 @@ public class MainCat : MonoBehaviour
     private bool give = false;
     private bool text = true;
     private ComponentsSO currentbungeobbang;
+    private int addon = 0;
 
     [SerializeField] private DialogSystem dialogSystem01;
-
+    [SerializeField] private ResourceManager resourceManager;
 
     private enum State
     {
@@ -94,6 +95,16 @@ public class MainCat : MonoBehaviour
 
             // branch와 반환값을 비교하여 결과 반환
             dialogSystem01.ReceiveBranchValue((result == branch) ? 151 : 152);
+            if (result == branch)
+            {
+                resourceManager.AddCoin(1000 + addon * 50);
+                resourceManager.AddFame(5 + addon);
+            }
+            else
+            {
+                resourceManager.AddFame(-5 - addon);
+            }
+            
             return (result == branch) ? 151 : 152;
         }
 
@@ -104,7 +115,8 @@ public class MainCat : MonoBehaviour
 
     private void HandleBranchLogic()
     {
-        int prefabIndex = (branch % 5) + 1;
+        int prefabIndex = Random.Range(1, 6);
+        addon = prefabIndex;
         string message = $"Branch {branch} processed with prefab index {prefabIndex}.";
 
         currentEventData = new EventData
