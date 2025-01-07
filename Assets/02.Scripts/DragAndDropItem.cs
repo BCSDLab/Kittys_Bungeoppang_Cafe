@@ -115,7 +115,8 @@ public class DragAndDropItem : MonoBehaviour
             }
         }
 
-        else if (draggableItem.CompareTag("Bungeobbang"))
+        
+        if (draggableItem.CompareTag("Bungeobbang"))
         {
             catController.CheckComponent(draggableItem.gameObject);
             Destroy(draggableItem.gameObject);

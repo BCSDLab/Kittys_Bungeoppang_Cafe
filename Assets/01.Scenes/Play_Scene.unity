@@ -2239,7 +2239,6 @@ GameObject:
   m_Component:
   - component: {fileID: 466499049}
   - component: {fileID: 466499050}
-  - component: {fileID: 466499051}
   m_Layer: 0
   m_Name: Bungeoppang
   m_TagString: Empty_Bungeobbang
@@ -2274,19 +2273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 466499048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f1ced0f1fc8a049ab5ade745d77132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &466499051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466499048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28adf3455e52429ab1ba146bdcee56d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f33c5d026e7c4ded8337e24559f1bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bungeoppang1: {fileID: 1199661053}
@@ -3033,6 +3020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogSystem01
       objectReference: {fileID: 0}
+    - target: {fileID: 1668564243371784667, guid: 13321a3faf72a425bbbf7a77135c2a45, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359727728275071749, guid: 13321a3faf72a425bbbf7a77135c2a45, type: 3}
       propertyPath: m_LocalPosition.x
       value: 316.12567
@@ -3087,7 +3078,7 @@ PrefabInstance:
       objectReference: {fileID: 890292376}
     - target: {fileID: 6942493547010278888, guid: 13321a3faf72a425bbbf7a77135c2a45, type: 3}
       propertyPath: Endcount
-      value: 3.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6942493547010278888, guid: 13321a3faf72a425bbbf7a77135c2a45, type: 3}
       propertyPath: dialogDB
@@ -3095,7 +3086,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ff6d513bc0573488192c974b42ef4899, type: 2}
     - target: {fileID: 6942493547010278888, guid: 13321a3faf72a425bbbf7a77135c2a45, type: 3}
       propertyPath: Startcount
-      value: 4
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 6942493547010278888, guid: 13321a3faf72a425bbbf7a77135c2a45, type: 3}
       propertyPath: speakers.Array.data[0].textName
@@ -3650,7 +3641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingTime: 7
   ovenTimeBar: {fileID: 699000283}
-  bungeoppangController: {fileID: 466499051}
+  bungeoppangController: {fileID: 466499050}
   componentsManager: {fileID: 284854242}
 --- !u!60 &699000282
 PolygonCollider2D:
@@ -8561,7 +8552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerController: {fileID: 919198313}
   ovenController: {fileID: 699000281}
-  bungeoppangController: {fileID: 466499051}
+  bungeoppangController: {fileID: 466499050}
   catController: {fileID: 974057341}
   trashCanController: {fileID: 466794729}
   frontCamera: {fileID: 1265202627}
@@ -11151,7 +11142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gauge: {fileID: 936923202}
-  gamePlayTime: 300
+  gamePlayTime: 100
   resourceManager: {fileID: 1230346492}
   isGameStart: 0
 --- !u!4 &1926039777
@@ -11878,12 +11869,16 @@ PrefabInstance:
       value: Cat
       objectReference: {fileID: 0}
     - target: {fileID: 3464749768799118150, guid: d71d0e7222eea49609952d1a7c6403ef, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464749768799118150, guid: d71d0e7222eea49609952d1a7c6403ef, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3464749768799118150, guid: d71d0e7222eea49609952d1a7c6403ef, type: 3}
       propertyPath: m_TagString
-      value: Bungeobbang
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

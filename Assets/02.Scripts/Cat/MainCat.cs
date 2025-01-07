@@ -163,7 +163,7 @@ public class MainCat : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && currentState == State.Start)
+        if (currentState == State.Start)
         {
             foreach (Transform child in transform)
             {
@@ -187,7 +187,7 @@ public class MainCat : MonoBehaviour
             StartCoroutine(SlideSequence(currentEventData.finalPosition.position));
         }
         
-        if (Input.GetMouseButtonDown(0) && currentState == State.Intermediate && text == true)
+        if (currentState == State.Intermediate && text == true)
         {
             int randomValue = UnityEngine.Random.Range(1, 151);
             
