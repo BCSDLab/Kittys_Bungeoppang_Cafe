@@ -7,6 +7,7 @@ public class DragAndDropItem : MonoBehaviour
     [SerializeField] MixerController mixerController;
     [SerializeField] OvenController ovenController;
     [SerializeField] BungeoppangController bungeoppangController;
+    [SerializeField] GameObject bound;
     [SerializeField] MainCat catController;
     [SerializeField] TrashCanController trashCanController;
 
@@ -118,8 +119,11 @@ public class DragAndDropItem : MonoBehaviour
         
         if (draggableItem.CompareTag("Bungeobbang"))
         {
-            catController.CheckComponent(draggableItem.gameObject);
-            Destroy(draggableItem.gameObject);
+            if(!IsOverlapping(draggableItem.gameObject, bound))
+            {
+                catController.CheckComponent(draggableItem.gameObject);
+                Destroy(draggableItem.gameObject);
+            }
         }
         
         // 쓰레기통에 버리기
@@ -134,21 +138,18 @@ public class DragAndDropItem : MonoBehaviour
             {
                 if (draggableItem.gameObject == bungeoppangController.bungeoppang1)
                 {
-                    Debug.Log("쓰레기통에 bungeoppang1.");
                     bungeoppangController.bungeoppang1.SetActive(false);
                     bungeoppangController.isBungeoppang1Visible = false;
                     bungeoppangController.isBungeoppang1Special = false;
                 }
                 else if (draggableItem.gameObject == bungeoppangController.bungeoppang2)
                 {
-                    Debug.Log("쓰레기통에 bungeoppang2.");
                     bungeoppangController.bungeoppang2.SetActive(false);
                     bungeoppangController.isBungeoppang2Visible = false;
                     bungeoppangController.isBungeoppang2Special = false;
                 }
                 else if (draggableItem.gameObject == bungeoppangController.bungeoppang3)
                 {
-                    Debug.Log("쓰레기통에 bungeoppang3.");
                     bungeoppangController.bungeoppang3.SetActive(false);
                     bungeoppangController.isBungeoppang3Visible = false;
                     bungeoppangController.isBungeoppang2Special = false;
