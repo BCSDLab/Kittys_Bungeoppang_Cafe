@@ -115,6 +115,12 @@ public class DragAndDropItem : MonoBehaviour
             }
         }
 
+        else if (draggableItem.CompareTag("Bungeobbang"))
+        {
+            catController.CheckComponent(draggableItem.gameObject);
+            Destroy(draggableItem.gameObject);
+        }
+        
         // 쓰레기통에 버리기
         if (trashCanController != null && IsOverlapping(draggableItem.gameObject, trashCanController.gameObject))
         {
@@ -126,22 +132,7 @@ public class DragAndDropItem : MonoBehaviour
             }
         }
 
-        else if (draggableItem.CompareTag("Cat"))
-        {
-            if (catController != null)
-            {
-                Components components = draggableItem.GetComponent<Components>();
-                if (components != null && components.componentData != null)
-                {
-                    catController.ReceiveBungeobbangData(components.componentData);
-                    Debug.Log($"고양이에게 아이템 전달: {components.componentData.componentName}");
-                }
-                else
-                {
-                    Debug.LogWarning("아이템에 유효한 데이터가 없습니다.");
-                }
-            }
-        }
+        
     }
 
     // 닿아 있는지 확인하기

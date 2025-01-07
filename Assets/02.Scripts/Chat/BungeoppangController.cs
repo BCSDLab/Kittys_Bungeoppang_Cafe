@@ -8,20 +8,20 @@ public class BungeoppangController : MonoBehaviour
     [SerializeField] public GameObject bungeoppang2;
     [SerializeField] public GameObject bungeoppang3;
     
-    // ºØ¾î»§ÀÌ º¸ÀÌ´ÂÁö ³ªÅ¸³»´Â »óÅÂ °ª
+    // ï¿½Ø¾î»§ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public bool isBungeoppang1Visible  = false;
     public bool isBungeoppang2Visible = false;
     public bool isBungeoppang3Visible = false;
 
-    // Æ¯º°ÇÑ ºØ¾î»§ÀÎÁö ³ªÅ¸³»´Â »óÅÂ °ª
+    // Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾î»§ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public bool isBungeoppang1Special = false;
     public bool isBungeoppang2Special = false;
     public bool isBungeoppang3Special = false;
 
-    // µµ¸¶ À§¿¡ ºØ¾î»§À» ¸¸µé±â
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾î»§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     public void CreateBungeobbang()
     {
-        // ¾È º¸ÀÌ´Â ºØ¾î»§ º¸ÀÌ°Ô ÇÏ±â
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Ø¾î»§ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½Ï±ï¿½
         if (isBungeoppang1Visible == false && isBungeoppang1Special == false)
         {
             bungeoppang1.SetActive(true);
@@ -39,7 +39,7 @@ public class BungeoppangController : MonoBehaviour
         }
     }
 
-    // ºØ¾î»§¿¡ ÇÊ¸µ Ã¤¿ì±â
+    // ï¿½Ø¾î»§ï¿½ï¿½ ï¿½Ê¸ï¿½ Ã¤ï¿½ï¿½ï¿½
     public void FillBungeobbang(GameObject emptyBungeobbang, GameObject filling)
     {
         Components component = filling.GetComponent<Components>();
@@ -47,7 +47,7 @@ public class BungeoppangController : MonoBehaviour
 
         emptyBungeobbang.SetActive(false);
 
-        // ºó ºØ¾î»§ÀÌ ÀÖÀ¸¸é Æ¯º°ÇÑ ºØ¾î»§À¸·Î ¸¸µé±â
+        // ï¿½ï¿½ ï¿½Ø¾î»§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾î»§ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         if (emptyBungeobbang == bungeoppang1 && isBungeoppang1Visible == true && isBungeoppang1Special == false)
         {
             MakeSpecialBungeobbang(emptyBungeobbang.transform.position, 1, filling);
@@ -62,7 +62,7 @@ public class BungeoppangController : MonoBehaviour
         }
     }
 
-    // Æ¯º°ÇÑ ºØ¾î»§ ¸¸µé±â
+    // Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾î»§ ï¿½ï¿½ï¿½ï¿½ï¿½
     void MakeSpecialBungeobbang(Vector3 bungeobbangPos, int bungeobbangIndex, GameObject filling)
     {
         GameObject output = Instantiate(

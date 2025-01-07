@@ -29,15 +29,15 @@ public class MainCat : MonoBehaviour
     [Header("Branch Configuration")]
     [SerializeField] private int branch;
 
-    [Header("Dialog Manager")]
-    [SerializeField] private DialogManager dialogManager; // DialogManager 참조 추가
-
     public ResponseEvent OnEventProcessed;
 
     private EventData currentEventData;
-    private State currentState = State.Start;
+    [SerializeField] private State currentState = State.Start;
     private bool give = false;
     private bool text = true;
+    private ComponentsSO currentbungeobbang;
+
+    [SerializeField] private DialogSystem dialogSystem01;
 
 
     private enum State
@@ -53,74 +53,54 @@ public class MainCat : MonoBehaviour
 
         if (OnEventProcessed == null)
             OnEventProcessed = new ResponseEvent();
-
-        HandleBranchLogic();
+        
+        //HandleBranchLogic();
     }
     
-    public void ReceiveDividedValue(int value)
+
+    public int CheckComponent(GameObject bungeobbang)
     {
-        branch = value;
-        Debug.Log($"MainCat received divided value: {branch}");
-    }
-    
-    public bool IsAtIntermediatePosition()
-    {
-        if (text == true)
+        Components component = bungeobbang.GetComponent<Components>();
+
+        if (component != null && component.componentData != null)
         {
-            return currentState == State.Intermediate && 
-                   Vector3.Distance(transform.position, intermediatePoint.position) < 0.01f;
-        }
-        text = false; 
-        return false;
-    }
+            give = true;
+            int result = -1;
 
-    public void ReceiveBungeobbangData(ComponentsSO bungeobbangComponent)
-    {
-        Debug.Log($"붕어빵 정보 수신: {bungeobbangComponent.componentName}");
-
-        int receivedValue = MapIngredientToValue(bungeobbangComponent.componentName);
-
-        if (receivedValue != -1)
-        {
-            if (dialogManager != null)
+            switch (component.componentData.componentName)
             {
-                int dialogValue = (branch % 5) + 1; // DialogManager에서 기대값을 가져옴
-
-                if (receivedValue == dialogValue)
-                {
-                    Debug.Log("Received value matches DialogManager's expected value: True");
-                    give = true;
-                }
-                else
-                {
-                    Debug.Log("Received value does not match DialogManager's expected value: False");
-                }
+                case "Peach":
+                    result = 0;
+                    break;
+                case "Chocolate":
+                    result = 3;
+                    break;
+                case "Avocado":
+                    result = 1;
+                    break;
+                case "Red_Pepper":
+                    result = 2;
+                    break;
+                case "Milk":
+                    result = 4;
+                    break;
+                default:
+                    Debug.LogWarning($"알 수 없는 componentName: {component.componentData.componentName}");
+                    result = -1;
+                    break;
             }
+
+            Debug.Log($"componentName: {component.componentData.componentName}, 반환 값: {result}");
+
+            // branch와 반환값을 비교하여 결과 반환
+            dialogSystem01.ReceiveBranchValue((result == branch) ? 151 : 152);
+            return (result == branch) ? 151 : 152;
         }
-        else
-        {
-            Debug.LogWarning("Received an invalid ingredient name.");
-        }
+
+        Debug.LogWarning("유효하지 않은 붕어빵 데이터입니다.");
+        return -1; // 유효하지 않은 데이터일 경우 -1 반환
     }
 
-    private int MapIngredientToValue(string ingredientName)
-    {
-        switch (ingredientName)
-        {
-            case "Avocado":
-                return 1;
-            case "Chocolate":
-                return 2;
-            case "Milk":
-                return 3;
-            case "Peach":
-                return 4;
-            case "Red_Pepper":
-                return 5;
-            default:
-                return -1; // Invalid ingredient
-        }
-    }
 
     private void HandleBranchLogic()
     {
@@ -142,6 +122,14 @@ public class MainCat : MonoBehaviour
     {
         Debug.Log($"Received Event: {eventData.message}");
 
+        // 기존에 생성된 자식 프리팹이 있으면 삭제
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+            Debug.Log($"Child {child.name} destroyed.");
+        }
+
+        // 새로운 프리팹 생성
         if (eventData.prefabIndex >= 1 && eventData.prefabIndex <= 5)
         {
             int index = eventData.prefabIndex - 1;
@@ -163,31 +151,47 @@ public class MainCat : MonoBehaviour
 
     private void Update()
     {
-        // 마우스 좌클릭으로 중간 위치로 이동
         if (Input.GetMouseButtonDown(0) && currentState == State.Start)
         {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+                Debug.Log($"Child {child.name} destroyed in Final State.");
+            }
+            HandleBranchLogic();
             StartCoroutine(SlideSequence(currentEventData.intermediatePosition.position));
             currentState = State.Intermediate;
         }
-
-        // 중간 위치에서 DialogManager에 값 전달
+        
         if (currentState == State.Intermediate && give == true)
         {
-            if (dialogManager != null)
-            {
-                Debug.Log("Cat reached intermediate position. Notifying DialogManager.");
-                
-            }
-
             give = false;
             currentState = State.Final; // 다음 상태로 전환
         }
 
-        if (Input.GetMouseButtonDown(0) && currentState == State.Final)
+        if (currentState == State.Final)
         {
             text = true;
-            dialogManager.ReceiveValueFromMainCat(branch); // DialogManager로 값 전달
             StartCoroutine(SlideSequence(currentEventData.finalPosition.position));
+        }
+        
+        if (Input.GetMouseButtonDown(0) && currentState == State.Intermediate && text == true)
+        {
+            int randomValue = UnityEngine.Random.Range(1, 151);
+            
+            if (dialogSystem01 != null)
+            {
+                dialogSystem01.ReceiveBranchValue(randomValue);
+            }
+            
+            branch = randomValue / 30;
+            
+            if (dialogSystem01 != null)
+            {
+                bool isDialogComplete = dialogSystem01.UpdateDialog();
+            }
+
+            text = false;
         }
     }
 
@@ -210,5 +214,10 @@ public class MainCat : MonoBehaviour
         }
 
         transform.position = targetPosition;
+        
+        if (currentState == State.Final)
+        {
+            currentState = State.Start;
+        }
     }
 }
