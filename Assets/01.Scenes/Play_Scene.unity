@@ -10733,7 +10733,7 @@ MonoBehaviour:
     \uBB38\uC744 \uC5F4\uC5C8\uC2B5\uB2C8\uB2E4!\r\n\r\n\uC804\uAD6D\uC801\uC73C\uB85C
     \uC720\uBA85\uD574\uC9C0\uAE30 \uC704\uD574 \uC624\uD508 \uCCAB \uB0A0\uBD80\uD130
     \uB3D9\uB124 \uC778\uAE30 \uAC00\uAC8C\uAC00 \uB418\uB294 \uAC83\uC774 \uBAA9\uD45C\uC785\uB2C8\uB2E4.\r\n\r\n\uC81C\uD55C
-    \uC2DC\uAC04 5\uBD84 \uB3D9\uC548 \uC8FC\uBB38\uC5D0 \uB9DE\uB294 \uBD95\uC5B4\uBE75\uC744
+    \uC2DC\uAC04 10\uCD08 \uB3D9\uC548 \uC8FC\uBB38\uC5D0 \uB9DE\uB294 \uBD95\uC5B4\uBE75\uC744
     \uC815\uD655\uD558\uACE0 \uBE60\uB974\uAC8C \uB9CC\uB4E4\uC5B4 \uB3C8\uACFC \uBA85\uC131\uC744
     \uC313\uC544\uBCF4\uC138\uC694!"
   typingDelay: 0.07
@@ -11305,7 +11305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gauge: {fileID: 936923202}
-  gamePlayTime: 180
+  gamePlayTime: 100
   resourceManager: {fileID: 1230346492}
   isGameStart: 0
 --- !u!4 &1926039777
