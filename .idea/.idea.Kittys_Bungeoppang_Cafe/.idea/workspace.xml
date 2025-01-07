@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b33751f-1fff-4809-a892-4d69b34c262c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kittys_Bungeoppang_Cafe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kittys_Bungeoppang_Cafe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scenes/Play_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scenes/Play_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/DragAndDropItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/DragAndDropItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/11.Chat/CatText.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/11.Chat/CatText.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/11.Chat/CatText.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/11.Chat/CatText.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/Cat/MainCat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/Cat/MainCat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Scripts/TimeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Scripts/TimeController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

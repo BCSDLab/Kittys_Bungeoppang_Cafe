@@ -98,11 +98,11 @@ public class MainCat : MonoBehaviour
             if (result == branch)
             {
                 resourceManager.AddCoin(1000 + addon * 50);
-                resourceManager.AddFame(5 + addon);
+                resourceManager.AddFame(10 - addon);
             }
             else
             {
-                resourceManager.AddFame(-5 - addon);
+                resourceManager.AddFame(-10 + addon);
             }
             
             return (result == branch) ? 151 : 152;

@@ -40,10 +40,10 @@ public class TimeController : MonoBehaviour
             if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 100)
             {
                 SceneManager.LoadScene("Ending_Best_Scene");
-            }else if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 0)
+            }else if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 30)
             {
                 SceneManager.LoadScene("Ending_Coin_Scene");
-            }else if (resourceManager.coinValue > 0 && resourceManager.fameValue > 100)
+            }else if (resourceManager.coinValue > 3000 && resourceManager.fameValue > 100)
             {
                 SceneManager.LoadScene("Ending_Fame_Scene");
             }else 
