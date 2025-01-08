@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/01.Scenes/Play_Scene.unity
     guid: 99d46a31d7c1463428487ec096fa54f8
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/Game_Play_Scene.unity
     guid: 16f7c624b2fbb6d469d0d24db86299fc
   - enabled: 0
@@ -32,10 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/Ending_Fame_Scene.unity
     guid: 28757f97f91edea4b97ceecb42c86351
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/Ending_Normal_Scene.unity
     guid: 7f596679153ced34fb2c3e70d6e7098f
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 2f42c7688432bfb4d9744bd6c91705da, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 312cc181f223c20489b1cc0c59044e9a, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 759afefc446aa7940916e77dc09d18ed, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: ac2e7918d9df7a740bba5e0df878d8ca, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
