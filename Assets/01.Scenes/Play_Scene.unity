@@ -431,6 +431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guidePanel: {fileID: 1652072433}
   textBGM: {fileID: 1033135881}
+  cookingSystem: {fileID: 1510642797}
+  cookingTool: {fileID: 246629711}
+  cat: {fileID: 974057339}
 --- !u!4 &29786801
 Transform:
   m_ObjectHideFlags: 0
@@ -6308,7 +6311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BGM \uB044\uAE30"
+  m_Text: BGM Off
 --- !u!222 &1033135882
 CanvasRenderer:
   m_ObjectHideFlags: 0
