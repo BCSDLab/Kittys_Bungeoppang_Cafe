@@ -160,17 +160,17 @@ MonoBehaviour:
     speakerIndex: 0
   - branch: 28
     name: "\uD68C\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 6-5+1\uBC88\uC9F8
+    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 6-5+3\uBC88\uC9F8
       \uC7AC\uB8CC\uB97C \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 29
     name: "\uD68C\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 6-5+1\uBC88\uC9F8
+    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 6-5+3\uBC88\uC9F8
       \uC7AC\uB8CC\uB97C \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 30
     name: "\uD68C\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 6-5+1\uBC88\uC9F8
+    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 6-5+3\uBC88\uC9F8
       \uC7AC\uB8CC\uB97C \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 31
@@ -589,27 +589,27 @@ MonoBehaviour:
     speakerIndex: 0
   - branch: 116
     name: "\uC0BC\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC67C\uCABD\uC5D0\uC11C 7+2-4\uBC88\uC9F8 \uC7AC\uB8CC\uB97C
+    dialog: "\uB0B4 \uAE30\uC900 \uC67C\uCABD\uC5D0\uC11C 7+1-4\uBC88\uC9F8 \uC7AC\uB8CC\uB97C
       \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 117
     name: "\uC0BC\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC67C\uCABD\uC5D0\uC11C 7+2-4\uBC88\uC9F8 \uC7AC\uB8CC\uB97C
+    dialog: "\uB0B4 \uAE30\uC900 \uC67C\uCABD\uC5D0\uC11C 7+1-4\uBC88\uC9F8 \uC7AC\uB8CC\uB97C
       \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 118
     name: "\uC0BC\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 2x2-3\uBC88\uC9F8
+    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 2x2-2\uBC88\uC9F8
       \uC7AC\uB8CC\uB97C \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 119
     name: "\uC0BC\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 2x2-3\uBC88\uC9F8
+    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 2x2-2\uBC88\uC9F8
       \uC7AC\uB8CC\uB97C \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 120
     name: "\uC0BC\uC0C9\uB0E5\uC774"
-    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 2x2-3\uBC88\uC9F8
+    dialog: "\uB0B4 \uAE30\uC900 \uC624\uB978\uCABD\uC5D0\uC11C 2x2-2\uBC88\uC9F8
       \uC7AC\uB8CC\uB97C \uC368\uB2EC\uB77C\uB0E5."
     speakerIndex: 0
   - branch: 121
