@@ -7,13 +7,10 @@ using UnityEngine.SceneManagement;
 public class TimeController : MonoBehaviour
 {
     [SerializeField] private Image gauge;
-
     [SerializeField] private float gamePlayTime = 300;
-    
     [SerializeField] private ResourceManager resourceManager;
     
     private float currentTime = 0;
-
     public bool isGameStart = false;
 
     void Update()
@@ -40,13 +37,16 @@ public class TimeController : MonoBehaviour
             if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 100)
             {
                 SceneManager.LoadScene("Ending_Best_Scene");
-            }else if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 30)
+            }
+            else if (resourceManager.coinValue > 10000 && resourceManager.fameValue > 30)
             {
                 SceneManager.LoadScene("Ending_Coin_Scene");
-            }else if (resourceManager.coinValue > 3000 && resourceManager.fameValue > 100)
+            }
+            else if (resourceManager.coinValue > 5000 && resourceManager.fameValue > 100)
             {
                 SceneManager.LoadScene("Ending_Fame_Scene");
-            }else 
+            }
+            else 
             {
                 SceneManager.LoadScene("Ending_Bad_Scene");
             }
